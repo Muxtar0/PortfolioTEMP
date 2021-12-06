@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*------------
+Reset
+------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none !important;
+    font-family: 'Roboto', sans-serif;
+}
+body,html{
+    overflow-x: hidden;
+    width: 100%;
+}
+body{
+    display: flex;
+
+}
+#PageLeft{
+    width: calc(100% - 100px);
+}
+#PageRight{
+    width: 100px;
+    height: 100vh;
+    border-left:1px solid var(--PageRight-border-color);
+}
+/*------------
+Colors
+------------*/
+:root{
+    --color-1:white;
+    --color-2:#000000;
+    --PageRight-border-color:#BCBCBC;
+    --SkillPercent-BG:#EBEBEB;
+    --SkillPercent-Span-BG:#484848;
+}
+/*------------
+Global css
+------------*/
+.TextBorder span{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width:1px;
+}
+@keyframes TopDown {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
+/*------------
+Banner
+------------*/
+#Banner{
+    position: relative;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Banner .BG-Image{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    height: 350px;
+    width: 100%;
+    z-index: -1;
+}
+#Banner .BG-Image img{
+    width: 100%;
+    height: 100%;
+}
+#Banner .col-12{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Banner .LeftCol h1{
+    font-style: normal;
+font-weight: bold;
+font-size: 60px;
+line-height: 70px;
+color: var(--color-2);
+width: 533px;
+}
+
+
+#Banner .LeftCol a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 98px;
+    height: 39px;
+    border-radius: 20px;
+    border: 1px solid var(--color-2);
+    background: var(--color-2);
+    color: var(--color-1);
+    transition: all 300ms;
+    font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 14px;
+}
+#Banner .LeftCol a:hover{
+    background: transparent;
+    color:var(--color-2)
+}
+#Banner .RightCol .ImageDiv img{
+    width: 100%;
+    height: 100%;
+}
+#Banner .RightCol .ImageDiv{
+    width: 497.63px;
+    height: 499.08px;
+}
+/*------------
+AboutMe
+------------*/
+#AboutMe .container{
+    border: 1px solid var(--PageRight-border-color);
+    border-radius: 16px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+#AboutMe .LeftCol .ImageDiv img{
+    transform: translateY(1px);
+    height: 388.54px;
+}
+#AboutMe .LeftCol .content{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+#AboutMe .LeftCol .ImageDiv{
+    padding-top: 80px;
+    border: 1px solid var(--color-2);
+    border-radius: 25px;
+
+}
+#AboutMe .RightCol .content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#AboutMe .RightCol h2{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    font-style: normal;
+font-weight: bold;
+font-size: 40px;
+line-height: 47px;
+color: var(--color-2);
+}
+#AboutMe .RightCol h2::before{
+    content: "";
+    position: absolute;
+    left: 35%;
+    bottom: 20px;
+    width: 60px;
+    height: 1px;
+    border: 0.81662px solid var(--color-2);
+}
+#AboutMe .RightCol h3{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+
+    color: var(--color-2);
+    margin: 25px 0;
+}
+#AboutMe .RightCol > p{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 143.19%;
+/* or 29px */
+
+
+color: var(--color-2);
+}
+#AboutMe .RightCol .ReadMore{
+    margin-top: 43px;
+
+}
+#AboutMe .RightCol .ReadMore > p{
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+font-weight: normal;
+font-size: 30px;
+line-height: 37px;
+color: var(--color-2);
+}
+#AboutMe .RightCol .ReadMore div{
+    display: flex;
+}
+#AboutMe .RightCol .ReadMore div p{
+    display: flex;
+    align-items: center;
+    
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+
+    color: #000000;
+}
+#AboutMe .RightCol .ReadMore div p i{
+    margin-left: 20px;
+}
+#AboutMe .RightCol .ReadMore div a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 98px;
+    height: 39px;
+    border-radius: 20px;
+    border: 1px solid var(--color-2);
+    background: var(--color-2);
+    color: var(--color-1);
+    transition: all 300ms;
+    font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 14px;
+margin-left: 20px;
+}
+
+#AboutMe .RightCol .ReadMore div a:hover{
+    background: transparent;
+    color:var(--color-2)
+}
+/*------------
+Skills
+------------*/
+#Skills{
+    margin: 100px 0;
+}
+#Skills .LeftCol .content{
+    position: relative;
+    padding-top: 80px;
+}
+#Skills .LeftCol h2{
+    position: absolute;
+    top: 0;
+    left: 0%;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 117px;
+    color: var(--color-2);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width:1px;
+    width: 100%;
+    
+}
+#Skills .LeftCol h3{
+    margin: 0;
+    padding: 0;
+ 
+    font-style: normal;
+font-weight: bold;
+font-size: 40px;
+line-height: 47px;
+
+color: var(--color-2);
+margin-bottom: 30px;
+margin-left: 30px;
+}
+#Skills .LeftCol p{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 143.19%;
+/* or 29px */
+
+
+color: var(--color-2);
+}
+#Skills .RightCol ul{
+    margin: 0;
+    padding: 0;
+}
+#Skills .RightCol ul li:not(:last-child){
+    margin-bottom: 35px;
+}
+#Skills .RightCol ul li .TopText {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#Skills .RightCol ul li .TopText p{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+color: var(--color-2);
+}
+#Skills .RightCol ul li .SkillPercent{
+    margin-top: 3px;
+    position: relative;
+    width: 100%;
+    height: 13px;
+    border-radius: 13px;
+    background: var(--SkillPercent-BG);
+}
+#Skills .RightCol ul li .SkillPercent span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 85%;
+    border-radius: 13px;
+    background: var(--SkillPercent-Span-BG);
+}
+/*------------
+WorksText
+------------*/
+#WorksText{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#WorksText h2{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: bold;
+font-size: 40px;
+line-height: 47px;
+/* identical to box height */
+
+
+color: var(--color-2);
+}
+#WorksText a{
+    text-align: center;
+    margin-top: 40px;
+    color: var(--color-2);
+    font-size: 60px;
+    animation: TopDown 700ms infinite;
+}
+/*------------
+Posters
+------------*/
+#Posters .TopCol .content{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#Posters .TopCol .content img{
+    width: 18%;
+    height: 300px;
+}
+#Posters .ImgCol,
+#Posters .TextCol{
+    margin-top: 20px;
+}
+#Posters .ImgCol .content{
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+}
+#Posters .ImgCol img{
+    width: 230px;
+    height: 300px;
+}
+#Posters .ImgCol img:nth-child(1){
+    transform: translateX(-7px);
+}
+#Posters .ImgCol img:nth-child(2){
+    margin-left: 40px;
+}
+#Posters .TextCol .content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Posters .TextCol h2{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: bold;
+font-size: 73px;
+line-height: 70px;
+
+color: var(--color-2);
+}
+#Posters .BOttomCol{
+    margin-top: 20px;
+}
+#Posters .BOttomCol a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 98px;
+    height: 39px;
+    border-radius: 20px;
+    border: 1px solid var(--color-2);
+    background: var(--color-2);
+    color: var(--color-1);
+    transition: all 300ms;
+    font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 14px;
+}
+
+#Posters .BOttomCol a:hover{
+    background: transparent;
+    color:var(--color-2)
+}
+/*------------
+Medias
+------------*/
+@media (max-width:992px) {
+    #PageRight{
+        display: none;
+    }
+    #PageLeft{
+        width: 100%;
+    }
+}
+@media (max-width:640px) {
+    
+}
