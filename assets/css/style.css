@@ -1216,7 +1216,242 @@ Medias
     #PageLeft{
         width: 100%;
     }
+    #Banner{
+        height:auto;
+    }
+    #Banner .LeftCol{
+        margin-top: 20px;
+    }
+    #Banner .RightCol{
+        margin-top: 80px;
+    }
+    #AboutMe{
+        margin-top: 130px;
+    }
+    #AboutMe .RightCol{
+        margin-top: 50px;
+    }
+    #Skills .RightCol{
+        margin-top: 50px;
+    }
+    #PortfolioPoster .MainContentCon .col-12:last-child{
+        margin-top: 20px;
+    }
+    #Testimonials .Slider{
+        width: 80%;
+    }
+    footer .right .content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 @media (max-width:640px) {
+    #Banner .LeftCol h1{
+        width: 100%;
+        margin-top: 20px;
+    }
+    #Banner .RightCol .ImageDiv{
+        width: 100%;
+        height: 100%;
+    }
+    @keyframes SquareDiv1 {
+        0%{
+            transform: translateX(0px,0);
+        }
     
+        30%{
+            transform: translate(340px,0);
+        }
+        50%{
+            transform: translate(340px,380px);
+        }
+        75%{
+            transform: translate(0px ,380px);
+            
+        }
+    
+        100%{
+            transform: translate(0px ,0px);
+        }
+    }
+    @keyframes SquareDiv2 {
+        0%{
+            transform: translate(0px,0);
+        }
+    
+        30%{
+            transform: translate(0px,290px);
+        }
+        50%{
+            transform: translate(-350px,290px);
+        }
+        75%{
+            transform: translate(-350px ,-100px);
+            
+        }
+    
+        90%{
+            transform: translate(0px ,-100px);
+        }
+        100%{
+            transform: translate(0px ,0px);
+        }
+    }
+    @keyframes SquareDiv3 {
+        0%{
+            transform: translate(0px,0);
+        }
+    
+        25%{
+            transform: translate(-50px,0px);
+        }
+        45%{
+            transform: translate(-50px,-400px);
+        }
+        60%{
+            transform: translate(300px ,-400px);
+            
+        }
+    
+        80%{
+            transform: translate(300px ,0px);
+        }
+        100%{
+            transform: translate(0px ,0px);
+        }
+    }    
+    #AboutMe .RightCol .ReadMore div p{
+        font-size: 25px;
+    }
+    #Posters .TopCol .content{
+        flex-wrap: wrap;
+    }
+    #Posters .TopCol .content img{
+        width: 48%;
+        margin-top: 20px;
+    }
+    #Posters .ImgCol img{
+        width: 48%;
+        margin: 0 !important;
+    }
+    #Posters .ImgCol .content{
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+    #Posters .TextCol h2{
+        font-size: 60px;
+    }
+    #Testimonials .Slider{
+        width: 100%;
+    }
+    footer .left .TopText h3{
+        font-size: 90px;
+    }
+    footer .left .TopText h4{
+        width: 90%;
+    }
+    footer .right .content .Inputs{
+        width: 100%;
+    }
+    footer .right .content .BTN{
+        width: 100%;
+    }
+}
+@media (max-width:400px){
+    #Banner .LeftCol h1{
+        font-size: 40px;
+        line-height:60px;
+    }
+    @keyframes SquareDiv1 {
+        0%{
+            transform: translateX(0px,0);
+        }
+    
+        30%{
+            transform: translate(330px,0);
+        }
+        50%{
+            transform: translate(330px,330px);
+        }
+        75%{
+            transform: translate(0px ,330px);
+            
+        }
+    
+        100%{
+            transform: translate(0px ,0px);
+        }
+    }
+    @keyframes SquareDiv2 {
+        0%{
+            transform: translate(0px,0);
+        }
+    
+        30%{
+            transform: translate(0px,250px);
+        }
+        50%{
+            transform: translate(-300px,250px);
+        }
+        75%{
+            transform: translate(-300px ,-100px);
+            
+        }
+    
+        90%{
+            transform: translate(0px ,-100px);
+        }
+        100%{
+            transform: translate(0px ,0px);
+        }
+    }
+    @keyframes SquareDiv3 {
+        0%{
+            transform: translate(0px,0);
+        }
+    
+        25%{
+            transform: translate(-50px,0px);
+        }
+        45%{
+            transform: translate(-50px,-330px);
+        }
+        60%{
+            transform: translate(280px ,-330px);
+            
+        }
+    
+        80%{
+            transform: translate(280px ,0px);
+        }
+        100%{
+            transform: translate(0px ,0px);
+        }
+    }    
+    #AboutMe .RightCol h2{
+        font-size: 35px;
+    }
+    #AboutMe .RightCol h2::before{
+        left: 60%;
+        
+    }
+    #AboutMe .RightCol .ReadMore div p{
+        font-size: 20px;
+    }
+    #Skills .LeftCol h2{
+        font-size: 80px;
+        top: 10px;
+    }
+    #PortfolioPoster .MainContentCon .content{
+        flex-direction: column;
+    }
+    #PortfolioPoster .MainContentCon .right{
+        margin-top: 20px;
+    }
+    #Posters .TextCol h2{
+        font-size: 50px;
+        line-height: 60px;
+    }
 }
