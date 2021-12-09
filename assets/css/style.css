@@ -16,15 +16,18 @@ body,html{
 }
 body{
     display: flex;
-
+    background: var(--color-1);
 }
 #PageLeft{
     width: calc(100% - 100px);
 }
 #PageRight{
     width: 100px;
-    height: 100vh;
+    padding-top: 50px;
     border-left:1px solid var(--PageRight-border-color);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 /*------------
 Colors
@@ -36,12 +39,35 @@ Colors
     --SkillPercent-BG:#EBEBEB;
     --SkillPercent-Span-BG:#484848;
 }
+body.active{
+    --color-1:#000000;
+    --color-2:white;
+    --SkillPercent-Span-BG:white;
+    --SkillPercent-BG:#313131;
+}
 /*------------
 Global css
 ------------*/
+.PortfolioTopText h3{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    color: var(--color-2);
+}
+.PortfolioTopText{
+    margin-bottom: 40px;
+}
 .TextBorder span{
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width:1px;
+}
+.SquareDiv{
+    border: 1.44872px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 21.7308px;
 }
 @keyframes TopDown {
     0%{
@@ -50,6 +76,165 @@ Global css
     100%{
         transform: translateY(-10px);
     }
+}
+/*------------
+Swiper
+------------*/
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+/*------------
+PageRight
+------------*/
+#PageRight .content .logo{
+    transform: rotate(90deg);
+}
+#PageRight .content .logo h2{
+    font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 35px;
+
+color: var(--color-2);
+}
+#PageRight .content .theme{
+    transform: rotate(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 140px;
+}
+#PageRight .content .theme .ThemeContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 33px;
+height: 108px;
+background: #383838;
+border-radius: 56px;
+transform: rotate(180deg);
+}
+#PageRight .content .theme .light p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #999999;
+    margin: 0;
+padding: 0;
+}
+#PageRight .content .theme .dark,
+#PageRight .content .theme .light{
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#PageRight .content .theme .dark{
+    background: #262626;
+box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+border-radius: 56px;
+width: 54px;
+height: 33px;
+}
+#PageRight .content .theme .light{
+    width: 54px;
+height: 33px;
+}
+#PageRight .content .theme .dark p{
+    font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+margin: 0;
+padding: 0;
+color: var(--color-2);
+}
+#PageRight .content .hamburgerMenuIcon{
+    width: 57px;
+height: 57px;
+
+margin-top: 100px;
+transform: translateX(5px);
+background: #141414;
+border: 1px solid #434343;
+box-sizing: border-box;
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+}
+#PageRight .content .hamburgerMenuIcon span{
+    width: 1px;
+    height: 21.11px;
+    margin: 0 5px;
+    background: var(--color-2);
+    transition: all 300ms;
+}
+#PageRight .content .hamburgerMenuIcon.active span:nth-child(1){
+    transform: rotate(-45deg);
+    margin: 0;
+
+}
+#PageRight .content .hamburgerMenuIcon.active span:nth-child(2){
+    transform: rotate(45deg);
+    margin: 0;
+}
+#PageRight .content .SocialMedias{
+    
+    margin-top: 100px;
+}
+#PageRight .content .SocialMedias ul{
+    margin: 0;
+    padding: 0;
+
+}
+#PageRight .content .SocialMedias ul li{
+    transform: rotate(90deg);
+    margin: 10px 0;
+}
+#PageRight .content .SocialMedias ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+height: 42px;
+font-size: 20px;
+
+border: 1px solid #434343;
+box-sizing: border-box;
+border-radius: 10px;
+color: var(--color-2);
 }
 /*------------
 Banner
@@ -108,6 +293,105 @@ line-height: 14px;
 #Banner .LeftCol a:hover{
     background: transparent;
     color:var(--color-2)
+}
+#Banner .RightCol .ImageDiv{
+    border: 1.44872px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 21.7308px;
+    position: relative;
+}
+#Banner .RightCol .ImageDiv .SquareDiv1{
+    width: 136.9px;
+height: 131.11px;
+    position: absolute;
+    top: -11%;
+    left: -11%;
+    animation: SquareDiv1 6000ms infinite;
+}
+@keyframes SquareDiv1 {
+    0%{
+        transform: translateX(0px,0);
+    }
+
+    30%{
+        transform: translate(480px,0);
+    }
+    50%{
+        transform: translate(480px,480px);
+    }
+    75%{
+        transform: translate(0px ,480px);
+        
+    }
+
+    100%{
+        transform: translate(0px ,0px);
+    }
+}
+#Banner .RightCol .ImageDiv .SquareDiv2{
+    width: 102.86px;
+    height: 103.58px;
+        position: absolute;
+        top: 13%;
+        right: -8%;
+    animation: SquareDiv2 6000ms infinite;
+
+}
+@keyframes SquareDiv2 {
+    0%{
+        transform: translate(0px,0);
+    }
+
+    30%{
+        transform: translate(0px,390px);
+    }
+    50%{
+        transform: translate(-480px,390px);
+    }
+    75%{
+        transform: translate(-480px ,-100px);
+        
+    }
+
+    90%{
+        transform: translate(0px ,-100px);
+    }
+    100%{
+        transform: translate(0px ,0px);
+    }
+}
+#Banner .RightCol .ImageDiv .SquareDiv3{
+    width: 76.06px;
+    height: 76.78px;
+        position: absolute;
+        bottom: -7%;
+    
+        left: 8%;
+    animation: SquareDiv3 6000ms infinite;
+
+}
+@keyframes SquareDiv3 {
+    0%{
+        transform: translate(0px,0);
+    }
+
+    25%{
+        transform: translate(-80px,0px);
+    }
+    45%{
+        transform: translate(-80px,-480px);
+    }
+    60%{
+        transform: translate(420px ,-480px);
+        
+    }
+
+    80%{
+        transform: translate(420px ,0px);
+    }
+    100%{
+        transform: translate(0px ,0px);
+    }
 }
 #Banner .RightCol .ImageDiv img{
     width: 100%;
@@ -178,7 +462,7 @@ color: var(--color-2);
     color: var(--color-2);
     margin: 25px 0;
 }
-#AboutMe .RightCol > p{
+#AboutMe .RightCol p{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -215,7 +499,7 @@ color: var(--color-2);
     font-size: 30px;
     line-height: 35px;
 
-    color: #000000;
+    color: var(--color-2);
 }
 #AboutMe .RightCol .ReadMore div p i{
     margin-left: 20px;
@@ -360,8 +644,189 @@ color: var(--color-2);
     animation: TopDown 700ms infinite;
 }
 /*------------
+GifPortfolio
+------------*/
+#GifPortfolio{
+    margin-top: 100px;
+}
+#GifPortfolio .GifSliderCon .swiper-slide{
+    background: transparent;
+}
+#GifPortfolio .GifSliderCon .swiper-slide .ImgDiv{
+    border-radius: 20px;
+    height: 165px;
+    width: 100%;
+
+}
+#GifPortfolio .GifSliderCon .swiper-slide .ImgDiv img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+#GifPortfolio .GifSliderCon .swiper-slide .TextDiv p{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: 300;
+font-size: 10px;
+line-height: 12px;
+
+color: #999999;
+margin-top: 19px;
+}
+#GifPortfolio .GifSliderCon .swiper-slide .TextDiv h5{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+color: var(--color-2);
+margin-top: 7px;
+}
+/*------------
+Portfolio3D
+------------*/
+#Portfolio3D{
+    margin-top: 100px;
+}
+#Portfolio3D .Slider3DCon .swiper-slide{
+    background: transparent;
+}
+#Portfolio3D .Slider3DCon .swiper-slide .ImgDiv{
+    border-radius: 20px;
+    height: 192px;
+    width: 100%;
+
+}
+#Portfolio3D .Slider3DCon .swiper-slide .ImgDiv img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+#Portfolio3D .Slider3DCon .swiper-slide .TextDiv p{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: 300;
+font-size: 10px;
+line-height: 12px;
+
+color: #999999;
+margin-top: 19px;
+}
+#Portfolio3D .Slider3DCon .swiper-slide .TextDiv h5{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+color: var(--color-2);
+margin-top: 7px;
+}
+/*------------
+MinimalPortfolio
+------------*/
+#MinimalPortfolio{
+    margin-top: 100px;
+}
+#MinimalPortfolio .MinimalSliderCon .swiper-slide{
+    background: transparent;
+}
+#MinimalPortfolio .MinimalSliderCon .swiper-slide .ImgDiv{
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+
+}
+#MinimalPortfolio .MinimalSliderCon .swiper-slide .ImgDiv img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+#MinimalPortfolio .MinimalSliderCon .swiper-slide .TextDiv p{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: 300;
+font-size: 10px;
+line-height: 12px;
+
+color: #999999;
+margin-top: 19px;
+}
+#MinimalPortfolio .MinimalSliderCon .swiper-slide .TextDiv h5{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+color: var(--color-2);
+margin-top: 7px;
+}
+/*------------
+PortfolioPoster
+------------*/
+#PortfolioPoster{
+    margin-top: 110px;
+}
+#PortfolioPoster .MainContentCon .content{
+    border: 2.66337px solid #484848;
+box-sizing: border-box;
+border-radius: 13.3168px;
+padding: 30px 15px;
+}
+#PortfolioPoster .MainContentCon .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#PortfolioPoster .MainContentCon .content .left{
+    margin-right: 20px;
+}
+#PortfolioPoster .MainContentCon .content .left img{
+    width: 145.15px;
+    height: 208.41px;
+
+}
+#PortfolioPoster .MainContentCon .content .right h2{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 23px;
+color: var(--color-2);
+}
+#PortfolioPoster .MainContentCon .content .right h4{
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+    /* identical to box height */
+color: var(--color-2);
+margin-top: 8px;
+margin-bottom: 20px;
+}
+#PortfolioPoster .MainContentCon .content .right p{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 143.19%;
+color: var(--color-2);
+}
+/*------------
 Posters
 ------------*/
+#Posters{
+    margin-top: 100px;
+}
 #Posters .TopCol .content{
     display:flex;
     align-items: center;
@@ -429,6 +894,317 @@ line-height: 14px;
 #Posters .BOttomCol a:hover{
     background: transparent;
     color:var(--color-2)
+}
+/*------------
+Testimonials
+------------*/
+#Testimonials{
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding:50px 0;
+    padding-bottom: 0;
+}
+#Testimonials .SquareDiv1{
+    position: absolute;
+    top: -5%;
+    left: 20%;
+    width: 66.22px;
+height: 70.08px;
+border-radius: 15px;
+}
+#Testimonials .SquareDiv2{
+    position: absolute;
+    top: 30%;
+    left: 3%;
+    width: 49.28px;
+    height: 52.36px;
+    border-radius: 11px;
+}
+#Testimonials .SquareDiv3{
+    position: absolute;
+    bottom: 0%;
+    left: 12%;
+    width: 77.01px;
+    height: 80.86px;
+    border-radius: 15px;
+}
+#Testimonials .SquareDiv4{
+    position: absolute;
+    top: 16%;
+    right: 10%;
+    width: 104px;
+    height: 103px;
+    border-radius: 15px;
+}
+#Testimonials .SquareDiv5{
+    position: absolute;
+    bottom: 0%;
+    right: 20%;
+    width: 70.08px;
+    height: 74.7px;
+    border-radius: 15px;
+}
+#Testimonials .TopText{
+    margin-bottom: 17px;
+}
+#Testimonials .TopText h2{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: bold;
+font-size: 40px;
+line-height: 47px;
+color: var(--color-2);
+
+}
+#Testimonials .Slider{
+    width: 50%;
+    margin: 0 auto;
+}
+#Testimonials .Slider .TestimonialsSlider{
+    padding: 0 30px;
+    padding-bottom: 50px;
+}
+
+#Testimonials .Slider .swiper-button-next:after{
+    display: none;
+}
+#Testimonials .Slider .swiper-button-prev::after{
+    display: none;
+}
+#Testimonials .Slider .swiper-button-next,
+#Testimonials .Slider .swiper-button-prev {
+    width: auto;
+    height: auto;
+}
+#Testimonials .Slider .swiper-button-next i,
+#Testimonials .Slider .swiper-button-prev i {
+    color:var(--color-2);
+}
+#Testimonials .Slider .TestimonialsSlider .swiper-pagination-bullet{
+    width: 51px;
+    height: 5px;
+    background: var(--color-2);
+    border: 1px solid var(--color-2);
+    border-radius: 0;
+    opacity: 1;
+    transition: all 300ms;
+}
+#Testimonials .Slider .TestimonialsSlider .swiper-pagination-bullet-active{
+    background: transparent;
+}
+#Testimonials .Slider .swiper-slide{
+    background: transparent;
+}
+
+#Testimonials .Slider .swiper-slide h3{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 143.19%;
+/* or 29px */
+
+text-align: center;
+color: var(--color-2);
+display: inline-block;
+position: relative;
+}
+#Testimonials .Slider .swiper-slide h3::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    width: 30px;
+    height: 1px;
+    background: var(--color-2);
+    transform: translateY(-50%);
+}
+#Testimonials .Slider .swiper-slide h3::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    width: 30px;
+    height: 1px;
+    background: var(--color-2);
+    transform: translateY(-50%);
+}
+#Testimonials .Slider .swiper-slide p{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 143.19%;
+/* or 29px */
+
+text-align: center;
+color:var(--color-2);
+margin-top: 6px;
+}
+/*------------
+footer
+------------*/
+footer{
+    margin-top: 170px;
+    padding-bottom: 30px;
+}
+footer .left .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 70px;
+}
+footer .left .TopText{
+    position: relative;
+}
+footer .left .TopText h3{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: bold;
+font-size: 112px;
+line-height: 131px;
+ color: #484848;
+}
+footer .left .TopText h4{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 47px;
+color: var(--color-2);
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translateX(-50%);
+width: 70%;
+}
+footer .left .MainContents{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+footer .left .MainContents > div{
+    width: 50%;
+    margin-top: 50px
+}
+footer .left .MainContents > div h5{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+color: var(--color-2);
+text-align: center;
+}
+footer .left .MainContents > div p{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 23px;
+color: var(--color-2);
+margin-top: 16px;
+text-align: center;
+}
+footer .left .MainContents > div ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+footer .left .MainContents > div ul li{
+    margin: 0 5px;
+}
+footer .left .MainContents > div ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30.57px;
+height: 30.57px;
+border: 0.599401px solid var(--color-2);
+box-sizing: border-box;
+border-radius: 5.99401px;
+color:var(--color-2);
+}
+footer .right .content .TopImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .right .content img{
+    width: 190.33px;
+height: 193.16px;
+margin: 0 auto;
+}
+footer .right .content .Inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 462.73px;
+}
+footer .right .content .Inputs input{
+    width: 100%;
+    height: 45.99px;    
+    border: 0.707541px solid var(--color-2);
+box-sizing: border-box;
+border-radius: 14.1508px;
+background: transparent;
+margin-top: 18px;
+padding: 12px 22px;
+color: var(--color-2);
+}
+footer .right .content .Inputs textarea{
+    width: 100%;
+
+    height: 149.29px;
+    border: 0.707541px solid var(--color-2);
+box-sizing: border-box;
+border-radius: 14.1508px;
+background: transparent;
+margin-top: 18px;
+padding: 12px 22px;
+color: var(--color-2);
+}
+footer .right .content .BTN{
+    width: 462.73px;
+    margin-top: 25px;
+}
+footer .right .content .BTN button{
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 98px;
+    height: 40px;
+    border-radius: 20px;
+    background: var(--color-2);
+    border: 1px solid var(--color-2);
+    color:var(--color-1);
+    transition: all 300ms;
+}
+footer .right .content .BTN button:hover{
+    background: transparent;
+    color: var(--color-2);
 }
 /*------------
 Medias
