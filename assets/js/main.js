@@ -1,8 +1,10 @@
 const hamburgermenuicon = document.querySelector('.hamburgermenuicon');
 const openmenu = document.querySelector('.openmenu');
+const pageright = document.querySelector('#pageright')
 hamburgermenuicon.addEventListener('click' , (e) => {
     hamburgermenuicon.classList.toggle('active');
     openmenu.classList.toggle('active');
+    pageright.classList.toggle('active')
 })
 
 /* template theme */
