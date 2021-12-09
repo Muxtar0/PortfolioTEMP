@@ -18,13 +18,14 @@ body{
     display: flex;
     background: var(--color-1);
 }
-#PageLeft{
+#pageleft{
     width: calc(100% - 100px);
+    overflow-x: hidden;
 }
-#PageRight{
+#pageright{
     width: 100px;
     padding-top: 50px;
-    border-left:1px solid var(--PageRight-border-color);
+    border-left:1px solid var(--pageright-border-color);
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -35,20 +36,20 @@ Colors
 :root{
     --color-1:white;
     --color-2:#000000;
-    --PageRight-border-color:#BCBCBC;
-    --SkillPercent-BG:#EBEBEB;
-    --SkillPercent-Span-BG:#484848;
+    --pageright-border-color:#BCBCBC;
+    --skillpercent-BG:#EBEBEB;
+    --skillpercent-Span-BG:#484848;
 }
-body.active{
+body.dark{
     --color-1:#000000;
     --color-2:white;
-    --SkillPercent-Span-BG:white;
-    --SkillPercent-BG:#313131;
+    --skillpercent-Span-BG:white;
+    --skillpercent-BG:#313131;
 }
 /*------------
 Global css
 ------------*/
-.PortfolioTopText h3{
+.portfoliotoptext h3{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -57,15 +58,15 @@ Global css
     line-height: 35px;
     color: var(--color-2);
 }
-.PortfolioTopText{
+.portfoliotoptext{
     margin-bottom: 40px;
 }
-.TextBorder span{
+.textborder span{
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width:1px;
 }
-.SquareDiv{
-    border: 1.44872px solid #FFFFFF;
+.squarediv{
+    border: 1.44872px solid var(--color-2);
     box-sizing: border-box;
     border-radius: 21.7308px;
 }
@@ -112,12 +113,12 @@ Swiper
     object-fit: cover;
   }
 /*------------
-PageRight
+pageright
 ------------*/
-#PageRight .content .logo{
+#pageright .content .logo{
     transform: rotate(90deg);
 }
-#PageRight .content .logo h2{
+#pageright .content .logo h2{
     font-style: normal;
 font-weight: bold;
 font-size: 30px;
@@ -125,14 +126,14 @@ line-height: 35px;
 
 color: var(--color-2);
 }
-#PageRight .content .theme{
-    transform: rotate(180deg);
+#pageright .content .theme{
+
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 140px;
 }
-#PageRight .content .theme .ThemeContent{
+#pageright .content .theme .themecontent{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -141,9 +142,12 @@ color: var(--color-2);
 height: 108px;
 background: #383838;
 border-radius: 56px;
-transform: rotate(180deg);
+
 }
-#PageRight .content .theme .light p{
+body.light .content .theme .themecontent{
+    background: #EBEBEB !important;
+}
+#pageright .content .theme .light p{
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -151,26 +155,45 @@ transform: rotate(180deg);
     color: #999999;
     margin: 0;
 padding: 0;
+transition: all 300ms;
 }
-#PageRight .content .theme .dark,
-#PageRight .content .theme .light{
+#pageright .content .theme .dark,
+#pageright .content .theme .light{
     transform: rotate(90deg);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 300ms;
+    cursor: pointer;
 }
-#PageRight .content .theme .dark{
-    background: #262626;
-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+#pageright .content .theme .dark{
 border-radius: 56px;
 width: 54px;
 height: 33px;
+transition: all 300ms;
 }
-#PageRight .content .theme .light{
+
+body.dark .content .theme .dark{
+    background: #262626;
+box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+}
+body.light .content .theme .light{
+    background: #FFFFFF;
+box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+}
+body.light .content .theme .light p{
+    color: #000000 !important;
+}
+body.light .content .theme .dark p{
+    color: #898989 !important;
+}
+#pageright .content .theme .light{
+    border-radius: 56px;
     width: 54px;
 height: 33px;
+transition: all 300ms;
 }
-#PageRight .content .theme .dark p{
+#pageright .content .theme .dark p{
     font-style: normal;
 font-weight: 500;
 font-size: 14px;
@@ -178,8 +201,9 @@ line-height: 16px;
 margin: 0;
 padding: 0;
 color: var(--color-2);
+transition: all 300ms;
 }
-#PageRight .content .hamburgerMenuIcon{
+#pageright .content .hamburgermenuicon{
     width: 57px;
 height: 57px;
 
@@ -193,37 +217,42 @@ display: flex;
 align-items: center;
 justify-content: center;
 cursor: pointer;
+transition: all 300ms;
 }
-#PageRight .content .hamburgerMenuIcon span{
+body.light #pageright .content .hamburgermenuicon{
+    background: #EBEBEB;
+    border-color: #BCBCBC;
+}
+#pageright .content .hamburgermenuicon span{
     width: 1px;
     height: 21.11px;
     margin: 0 5px;
     background: var(--color-2);
     transition: all 300ms;
 }
-#PageRight .content .hamburgerMenuIcon.active span:nth-child(1){
+#pageright .content .hamburgermenuicon.active span:nth-child(1){
     transform: rotate(-45deg);
     margin: 0;
 
 }
-#PageRight .content .hamburgerMenuIcon.active span:nth-child(2){
+#pageright .content .hamburgermenuicon.active span:nth-child(2){
     transform: rotate(45deg);
     margin: 0;
 }
-#PageRight .content .SocialMedias{
+#pageright .content .socialmedias{
     
     margin-top: 100px;
 }
-#PageRight .content .SocialMedias ul{
+#pageright .content .socialmedias ul{
     margin: 0;
     padding: 0;
 
 }
-#PageRight .content .SocialMedias ul li{
+#pageright .content .socialmedias ul li{
     transform: rotate(90deg);
     margin: 10px 0;
 }
-#PageRight .content .SocialMedias ul li a{
+#pageright .content .socialmedias ul li a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -237,16 +266,74 @@ border-radius: 10px;
 color: var(--color-2);
 }
 /*------------
-Banner
+open menu
 ------------*/
-#Banner{
+.openmenu{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: calc(100% - 100px);
+    background: var(--color-1);
+    z-index: 1000;
+    transition: all 600ms;
+}
+.openmenu.active{
+    left: 0;
+}
+.openmenu .content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.openmenu .content ul{
+    margin: 0;
+    padding: 0;
+}
+.openmenu .content ul li{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.openmenu .content ul li a{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: 900;
+font-size: 50px;
+line-height: 59px;
+color: var(--color-2);
+text-align: center;
+transition: all 300ms;
+position: relative;
+}
+.openmenu .content ul li a::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--color-2);
+    transition: all 300ms;
+}
+.openmenu .content ul li a:hover::before{
+    width: 100%;
+}
+/*------------
+banner
+------------*/
+#banner{
     position: relative;
     height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#Banner .BG-Image{
+#banner .bg-image{
     position: absolute;
     left: 50%;
     top: 0;
@@ -255,16 +342,16 @@ Banner
     width: 100%;
     z-index: -1;
 }
-#Banner .BG-Image img{
+#banner .bg-image img{
     width: 100%;
     height: 100%;
 }
-#Banner .col-12{
+#banner .col-12{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#Banner .LeftCol h1{
+#banner .leftcol h1{
     font-style: normal;
 font-weight: bold;
 font-size: 60px;
@@ -274,7 +361,7 @@ width: 533px;
 }
 
 
-#Banner .LeftCol a{
+#banner .leftcol a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -290,34 +377,34 @@ font-weight: normal;
 font-size: 14px;
 line-height: 14px;
 }
-#Banner .LeftCol a:hover{
+#banner .leftcol a:hover{
     background: transparent;
     color:var(--color-2)
 }
-#Banner .RightCol .ImageDiv{
-    border: 1.44872px solid #FFFFFF;
+#banner .rightcol .imagediv{
+    border: 1.44872px solid var(--color-2);
     box-sizing: border-box;
     border-radius: 21.7308px;
     position: relative;
 }
-#Banner .RightCol .ImageDiv .SquareDiv1{
+#banner .rightcol .imagediv .squarediv1{
     width: 136.9px;
 height: 131.11px;
     position: absolute;
     top: -11%;
     left: -11%;
-    animation: SquareDiv1 6000ms infinite;
+    animation: squarediv1 6000ms infinite;
 }
-@keyframes SquareDiv1 {
+@keyframes squarediv1 {
     0%{
         transform: translateX(0px,0);
     }
 
     30%{
-        transform: translate(480px,0);
+        transform: translate(440px,0);
     }
     50%{
-        transform: translate(480px,480px);
+        transform: translate(440px,480px);
     }
     75%{
         transform: translate(0px ,480px);
@@ -328,16 +415,16 @@ height: 131.11px;
         transform: translate(0px ,0px);
     }
 }
-#Banner .RightCol .ImageDiv .SquareDiv2{
+#banner .rightcol .imagediv .squarediv2{
     width: 102.86px;
     height: 103.58px;
         position: absolute;
         top: 13%;
         right: -8%;
-    animation: SquareDiv2 6000ms infinite;
+    animation: squarediv2 6000ms infinite;
 
 }
-@keyframes SquareDiv2 {
+@keyframes squarediv2 {
     0%{
         transform: translate(0px,0);
     }
@@ -360,17 +447,17 @@ height: 131.11px;
         transform: translate(0px ,0px);
     }
 }
-#Banner .RightCol .ImageDiv .SquareDiv3{
+#banner .rightcol .imagediv .squarediv3{
     width: 76.06px;
     height: 76.78px;
         position: absolute;
         bottom: -7%;
     
         left: 8%;
-    animation: SquareDiv3 6000ms infinite;
+    animation: squarediv3 6000ms infinite;
 
 }
-@keyframes SquareDiv3 {
+@keyframes squarediv3 {
     0%{
         transform: translate(0px,0);
     }
@@ -393,45 +480,59 @@ height: 131.11px;
         transform: translate(0px ,0px);
     }
 }
-#Banner .RightCol .ImageDiv img{
+#banner .rightcol .imagediv img{
     width: 100%;
     height: 100%;
 }
-#Banner .RightCol .ImageDiv{
+#banner .rightcol .imagediv{
     width: 497.63px;
     height: 499.08px;
 }
 /*------------
-AboutMe
+aboutme
 ------------*/
-#AboutMe .container{
-    border: 1px solid var(--PageRight-border-color);
+#aboutme .container{
+    border: 1px solid var(--pageright-border-color);
     border-radius: 16px;
     padding-top: 40px;
     padding-bottom: 40px;
 }
-#AboutMe .LeftCol .ImageDiv img{
+#aboutme .leftcol{
+    transform: translateX(-100px);
+    transition: all 1000ms;
+}
+#aboutme .leftcol.active{
+    transform: translateX(0px);
+}
+#aboutme .rightcol{
+    transform: translateX(100px);
+    transition: all 1000ms;
+}
+#aboutme .rightcol.active{
+    transform: translateX(0px);
+}
+#aboutme .leftcol .imagediv img{
     transform: translateY(1px);
     height: 388.54px;
 }
-#AboutMe .LeftCol .content{
+#aboutme .leftcol .content{
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
-#AboutMe .LeftCol .ImageDiv{
+#aboutme .leftcol .imagediv{
     padding-top: 80px;
-    border: 1px solid var(--color-2);
+    border: 2px solid var(--color-2);
     border-radius: 25px;
 
 }
-#AboutMe .RightCol .content{
+#aboutme .rightcol .content{
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-#AboutMe .RightCol h2{
+#aboutme .rightcol h2{
     margin: 0;
     padding: 0;
     display: inline-block;
@@ -442,7 +543,7 @@ font-size: 40px;
 line-height: 47px;
 color: var(--color-2);
 }
-#AboutMe .RightCol h2::before{
+#aboutme .rightcol h2::before{
     content: "";
     position: absolute;
     left: 35%;
@@ -451,7 +552,7 @@ color: var(--color-2);
     height: 1px;
     border: 0.81662px solid var(--color-2);
 }
-#AboutMe .RightCol h3{
+#aboutme .rightcol h3{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -462,7 +563,7 @@ color: var(--color-2);
     color: var(--color-2);
     margin: 25px 0;
 }
-#AboutMe .RightCol p{
+#aboutme .rightcol p{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -474,11 +575,11 @@ line-height: 143.19%;
 
 color: var(--color-2);
 }
-#AboutMe .RightCol .ReadMore{
+#aboutme .rightcol .readmore{
     margin-top: 43px;
 
 }
-#AboutMe .RightCol .ReadMore > p{
+#aboutme .rightcol .readmore > p{
     margin: 0;
     padding: 0;
     font-style: italic;
@@ -487,10 +588,10 @@ font-size: 30px;
 line-height: 37px;
 color: var(--color-2);
 }
-#AboutMe .RightCol .ReadMore div{
+#aboutme .rightcol .readmore div{
     display: flex;
 }
-#AboutMe .RightCol .ReadMore div p{
+#aboutme .rightcol .readmore div p{
     display: flex;
     align-items: center;
     
@@ -501,10 +602,10 @@ color: var(--color-2);
 
     color: var(--color-2);
 }
-#AboutMe .RightCol .ReadMore div p i{
+#aboutme .rightcol .readmore div p i{
     margin-left: 20px;
 }
-#AboutMe .RightCol .ReadMore div a{
+#aboutme .rightcol .readmore div a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -522,21 +623,35 @@ line-height: 14px;
 margin-left: 20px;
 }
 
-#AboutMe .RightCol .ReadMore div a:hover{
+#aboutme .rightcol .readmore div a:hover{
     background: transparent;
     color:var(--color-2)
 }
 /*------------
-Skills
+skills
 ------------*/
-#Skills{
+#skills{
     margin: 100px 0;
 }
-#Skills .LeftCol .content{
+#skills .leftcol{
+    transform: translateX(-200px);
+    transition: all 2000ms;
+}
+#skills .leftcol.active{
+    transform: translateX(0px);
+}
+#skills .rightcol{
+    transform: translateX(200px);
+    transition: all 2000ms;
+}
+#skills .rightcol.active{
+    transform: translateX(0px);
+}
+#skills .leftcol .content{
     position: relative;
     padding-top: 80px;
 }
-#Skills .LeftCol h2{
+#skills .leftcol h2{
     position: absolute;
     top: 0;
     left: 0%;
@@ -551,7 +666,7 @@ Skills
     width: 100%;
     
 }
-#Skills .LeftCol h3{
+#skills .leftcol h3{
     margin: 0;
     padding: 0;
  
@@ -564,7 +679,7 @@ color: var(--color-2);
 margin-bottom: 30px;
 margin-left: 30px;
 }
-#Skills .LeftCol p{
+#skills .leftcol p{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -576,19 +691,19 @@ line-height: 143.19%;
 
 color: var(--color-2);
 }
-#Skills .RightCol ul{
+#skills .rightcol ul{
     margin: 0;
     padding: 0;
 }
-#Skills .RightCol ul li:not(:last-child){
+#skills .rightcol ul li:not(:last-child){
     margin-bottom: 35px;
 }
-#Skills .RightCol ul li .TopText {
+#skills .rightcol ul li .toptext {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-#Skills .RightCol ul li .TopText p{
+#skills .rightcol ul li .toptext p{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -597,33 +712,38 @@ font-size: 20px;
 line-height: 23px;
 color: var(--color-2);
 }
-#Skills .RightCol ul li .SkillPercent{
+#skills .rightcol ul li .skillpercent{
     margin-top: 3px;
     position: relative;
     width: 100%;
     height: 13px;
     border-radius: 13px;
-    background: var(--SkillPercent-BG);
+    background: var(--skillpercent-BG);
 }
-#Skills .RightCol ul li .SkillPercent span{
+#skills .rightcol ul li .skillpercent span{
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 85%;
     border-radius: 13px;
-    background: var(--SkillPercent-Span-BG);
+    background: var(--skillpercent-Span-BG);
 }
 /*------------
-WorksText
+workstext
 ------------*/
-#WorksText{
+#workstext{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    transform: translateX(-200px);
+    transition: all 1000ms;
 }
-#WorksText h2{
+#workstext.active{
+    transform: translateX(0);
+}
+#workstext h2{
     text-align: center;
     margin: 0;
     padding: 0;
@@ -636,7 +756,7 @@ line-height: 47px;
 
 color: var(--color-2);
 }
-#WorksText a{
+#workstext a{
     text-align: center;
     margin-top: 40px;
     color: var(--color-2);
@@ -644,26 +764,33 @@ color: var(--color-2);
     animation: TopDown 700ms infinite;
 }
 /*------------
-GifPortfolio
+gifportfolio
 ------------*/
-#GifPortfolio{
+#gifportfolio{
+    transform: translateY(200px);
+    transition: all 1000ms;
+}
+#gifportfolio.active{
+    transform: translateY(0px);
+}
+#gifportfolio{
     margin-top: 100px;
 }
-#GifPortfolio .GifSliderCon .swiper-slide{
+#gifportfolio .gifslidercon .swiper-slide{
     background: transparent;
 }
-#GifPortfolio .GifSliderCon .swiper-slide .ImgDiv{
+#gifportfolio .gifslidercon .swiper-slide .imgdiv{
     border-radius: 20px;
     height: 165px;
     width: 100%;
 
 }
-#GifPortfolio .GifSliderCon .swiper-slide .ImgDiv img{
+#gifportfolio .gifslidercon .swiper-slide .imgdiv img{
     width: 100%;
     height: 100%;
     border-radius: 20px;
 }
-#GifPortfolio .GifSliderCon .swiper-slide .TextDiv p{
+#gifportfolio .gifslidercon .swiper-slide .textdiv p{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -674,7 +801,7 @@ line-height: 12px;
 color: #999999;
 margin-top: 19px;
 }
-#GifPortfolio .GifSliderCon .swiper-slide .TextDiv h5{
+#gifportfolio .gifslidercon .swiper-slide .textdiv h5{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -685,26 +812,33 @@ color: var(--color-2);
 margin-top: 7px;
 }
 /*------------
-Portfolio3D
+portfolio3d
 ------------*/
-#Portfolio3D{
+#portfolio3d{
+    transform: translateY(200px);
+    transition: all 1000ms;
+}
+#portfolio3d.active{
+    transform: translateY(0px);
+}
+#portfolio3d{
     margin-top: 100px;
 }
-#Portfolio3D .Slider3DCon .swiper-slide{
+#portfolio3d .slider3dcon .swiper-slide{
     background: transparent;
 }
-#Portfolio3D .Slider3DCon .swiper-slide .ImgDiv{
+#portfolio3d .slider3dcon .swiper-slide .imgdiv{
     border-radius: 20px;
     height: 192px;
     width: 100%;
 
 }
-#Portfolio3D .Slider3DCon .swiper-slide .ImgDiv img{
+#portfolio3d .slider3dcon .swiper-slide .imgdiv img{
     width: 100%;
     height: 100%;
     border-radius: 20px;
 }
-#Portfolio3D .Slider3DCon .swiper-slide .TextDiv p{
+#portfolio3d .slider3dcon .swiper-slide .textdiv p{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -715,7 +849,7 @@ line-height: 12px;
 color: #999999;
 margin-top: 19px;
 }
-#Portfolio3D .Slider3DCon .swiper-slide .TextDiv h5{
+#portfolio3d .slider3dcon .swiper-slide .textdiv h5{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -726,26 +860,33 @@ color: var(--color-2);
 margin-top: 7px;
 }
 /*------------
-MinimalPortfolio
+minimalportfolio
 ------------*/
-#MinimalPortfolio{
+#minimalportfolio{
+    transform: translateY(200px);
+    transition: all 1000ms;
+}
+#minimalportfolio.active{
+    transform: translateY(0px);
+}
+#minimalportfolio{
     margin-top: 100px;
 }
-#MinimalPortfolio .MinimalSliderCon .swiper-slide{
+#minimalportfolio .minimalslidercon .swiper-slide{
     background: transparent;
 }
-#MinimalPortfolio .MinimalSliderCon .swiper-slide .ImgDiv{
+#minimalportfolio .minimalslidercon .swiper-slide .imgdiv{
     border-radius: 20px;
     height: 100%;
     width: 100%;
 
 }
-#MinimalPortfolio .MinimalSliderCon .swiper-slide .ImgDiv img{
+#minimalportfolio .minimalslidercon .swiper-slide .imgdiv img{
     width: 100%;
     height: 100%;
     border-radius: 20px;
 }
-#MinimalPortfolio .MinimalSliderCon .swiper-slide .TextDiv p{
+#minimalportfolio .minimalslidercon .swiper-slide .textdiv p{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -756,7 +897,7 @@ line-height: 12px;
 color: #999999;
 margin-top: 19px;
 }
-#MinimalPortfolio .MinimalSliderCon .swiper-slide .TextDiv h5{
+#minimalportfolio .minimalslidercon .swiper-slide .textdiv h5{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -767,31 +908,47 @@ color: var(--color-2);
 margin-top: 7px;
 }
 /*------------
-PortfolioPoster
+portfolioposter
 ------------*/
-#PortfolioPoster{
+#portfolioposter{
     margin-top: 110px;
 }
-#PortfolioPoster .MainContentCon .content{
+#portfolioposter .maincontentcon .leftcol{
+    transform: translateX(-100px);
+    transition: all 1000ms;
+}
+#portfolioposter .maincontentcon  .leftcol.active{
+    transform: translateX(0);
+}
+#portfolioposter .maincontentcon  .rightcol{
+    transform: translateX(100px);
+    transition: all 1000ms;
+}
+#portfolioposter .maincontentcon  .rightcol.active{
+    transform: translateX(0);
+}
+#portfolioposter .maincontentcon .content{
     border: 2.66337px solid #484848;
 box-sizing: border-box;
 border-radius: 13.3168px;
 padding: 30px 15px;
 }
-#PortfolioPoster .MainContentCon .content{
+#portfolioposter .maincontentcon .content{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-#PortfolioPoster .MainContentCon .content .left{
+#portfolioposter .maincontentcon .content .left{
     margin-right: 20px;
+
 }
-#PortfolioPoster .MainContentCon .content .left img{
+
+#portfolioposter .maincontentcon .content .left img{
     width: 145.15px;
     height: 208.41px;
 
 }
-#PortfolioPoster .MainContentCon .content .right h2{
+#portfolioposter .maincontentcon .content .right h2{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -800,7 +957,7 @@ font-size: 20px;
 line-height: 23px;
 color: var(--color-2);
 }
-#PortfolioPoster .MainContentCon .content .right h4{
+#portfolioposter .maincontentcon .content .right h4{
     margin: 0;
     padding: 0;
     font-style: italic;
@@ -812,7 +969,7 @@ color: var(--color-2);
 margin-top: 8px;
 margin-bottom: 20px;
 }
-#PortfolioPoster .MainContentCon .content .right p{
+#portfolioposter .maincontentcon .content .right p{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -822,46 +979,74 @@ margin-bottom: 20px;
 color: var(--color-2);
 }
 /*------------
-Posters
+posters
 ------------*/
-#Posters{
+#posters{
     margin-top: 100px;
 }
-#Posters .TopCol .content{
+#posters .topcol{
+    transform: translateX(-500px);
+    transition: all 1500ms;
+}
+#posters .topcol.active{
+    transform: translateX(0);
+}
+#posters .imgcol{
+    transform: translateX(-500px);
+    transition: all 1500ms;
+}
+#posters .imgcol.active{
+    transform: translateX(0);
+}
+#posters .textcol{
+    transform: translateX(500px);
+    transition: all 1500ms;
+}
+#posters .textcol.active{
+    transform: translateX(0);
+}
+#posters .bottomcol{
+    transform: translateX(-300px);
+    transition: all 1000ms;
+}
+#posters .bottomcol.active{
+    transform: translateX(0);
+}
+#posters .topcol .content{
     display:flex;
     align-items: center;
     justify-content: space-between;
 }
-#Posters .TopCol .content img{
+#posters .topcol .content img{
     width: 18%;
     height: 300px;
 }
-#Posters .ImgCol,
-#Posters .TextCol{
+#posters .imgcol,
+#posters .textcol{
     margin-top: 20px;
 }
-#Posters .ImgCol .content{
+#posters .imgcol .content{
     display: flex;
     align-items:center;
     justify-content: flex-start;
 }
-#Posters .ImgCol img{
+#posters .imgcol img{
     width: 230px;
     height: 300px;
 }
-#Posters .ImgCol img:nth-child(1){
+#posters .imgcol img:nth-child(1){
     transform: translateX(-7px);
 }
-#Posters .ImgCol img:nth-child(2){
+#posters .imgcol img:nth-child(2){
     margin-left: 40px;
 }
-#Posters .TextCol .content{
+#posters .textcol .content{
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#Posters .TextCol h2{
+#posters .textcol h2{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -871,10 +1056,10 @@ line-height: 70px;
 
 color: var(--color-2);
 }
-#Posters .BOttomCol{
+#posters .bottomcol{
     margin-top: 20px;
 }
-#Posters .BOttomCol a{
+#posters .bottomcol a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -891,7 +1076,7 @@ font-size: 14px;
 line-height: 14px;
 }
 
-#Posters .BOttomCol a:hover{
+#posters .bottomcol a:hover{
     background: transparent;
     color:var(--color-2)
 }
@@ -907,8 +1092,13 @@ Testimonials
     position: relative;
     padding:50px 0;
     padding-bottom: 0;
+    transform: translateY(200px);
+    transition: all 1000ms;
 }
-#Testimonials .SquareDiv1{
+#Testimonials.active{
+    transform: translateY(0);
+}
+#Testimonials .squarediv1{
     position: absolute;
     top: -5%;
     left: 20%;
@@ -916,7 +1106,7 @@ Testimonials
 height: 70.08px;
 border-radius: 15px;
 }
-#Testimonials .SquareDiv2{
+#Testimonials .squarediv2{
     position: absolute;
     top: 30%;
     left: 3%;
@@ -924,7 +1114,7 @@ border-radius: 15px;
     height: 52.36px;
     border-radius: 11px;
 }
-#Testimonials .SquareDiv3{
+#Testimonials .squarediv3{
     position: absolute;
     bottom: 0%;
     left: 12%;
@@ -932,7 +1122,7 @@ border-radius: 15px;
     height: 80.86px;
     border-radius: 15px;
 }
-#Testimonials .SquareDiv4{
+#Testimonials .squarediv4{
     position: absolute;
     top: 16%;
     right: 10%;
@@ -940,7 +1130,7 @@ border-radius: 15px;
     height: 103px;
     border-radius: 15px;
 }
-#Testimonials .SquareDiv5{
+#Testimonials .squarediv5{
     position: absolute;
     bottom: 0%;
     right: 20%;
@@ -948,10 +1138,10 @@ border-radius: 15px;
     height: 74.7px;
     border-radius: 15px;
 }
-#Testimonials .TopText{
+#Testimonials .toptext{
     margin-bottom: 17px;
 }
-#Testimonials .TopText h2{
+#Testimonials .toptext h2{
     text-align: center;
     margin: 0;
     padding: 0;
@@ -962,31 +1152,31 @@ line-height: 47px;
 color: var(--color-2);
 
 }
-#Testimonials .Slider{
+#Testimonials .slider{
     width: 50%;
     margin: 0 auto;
 }
-#Testimonials .Slider .TestimonialsSlider{
+#Testimonials .slider .testimonialsslider{
     padding: 0 30px;
     padding-bottom: 50px;
 }
 
-#Testimonials .Slider .swiper-button-next:after{
+#Testimonials .slider .swiper-button-next:after{
     display: none;
 }
-#Testimonials .Slider .swiper-button-prev::after{
+#Testimonials .slider .swiper-button-prev::after{
     display: none;
 }
-#Testimonials .Slider .swiper-button-next,
-#Testimonials .Slider .swiper-button-prev {
+#Testimonials .slider .swiper-button-next,
+#Testimonials .slider .swiper-button-prev {
     width: auto;
     height: auto;
 }
-#Testimonials .Slider .swiper-button-next i,
-#Testimonials .Slider .swiper-button-prev i {
+#Testimonials .slider .swiper-button-next i,
+#Testimonials .slider .swiper-button-prev i {
     color:var(--color-2);
 }
-#Testimonials .Slider .TestimonialsSlider .swiper-pagination-bullet{
+#Testimonials .slider .testimonialsslider .swiper-pagination-bullet{
     width: 51px;
     height: 5px;
     background: var(--color-2);
@@ -995,14 +1185,14 @@ color: var(--color-2);
     opacity: 1;
     transition: all 300ms;
 }
-#Testimonials .Slider .TestimonialsSlider .swiper-pagination-bullet-active{
+#Testimonials .slider .testimonialsslider .swiper-pagination-bullet-active{
     background: transparent;
 }
-#Testimonials .Slider .swiper-slide{
+#Testimonials .slider .swiper-slide{
     background: transparent;
 }
 
-#Testimonials .Slider .swiper-slide h3{
+#Testimonials .slider .swiper-slide h3{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -1016,7 +1206,7 @@ color: var(--color-2);
 display: inline-block;
 position: relative;
 }
-#Testimonials .Slider .swiper-slide h3::before{
+#Testimonials .slider .swiper-slide h3::before{
     content: "";
     position: absolute;
     top: 50%;
@@ -1026,7 +1216,7 @@ position: relative;
     background: var(--color-2);
     transform: translateY(-50%);
 }
-#Testimonials .Slider .swiper-slide h3::after{
+#Testimonials .slider .swiper-slide h3::after{
     content: "";
     position: absolute;
     top: 50%;
@@ -1036,7 +1226,7 @@ position: relative;
     background: var(--color-2);
     transform: translateY(-50%);
 }
-#Testimonials .Slider .swiper-slide p{
+#Testimonials .slider .swiper-slide p{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -1056,6 +1246,20 @@ footer{
     margin-top: 170px;
     padding-bottom: 30px;
 }
+footer .left{
+    transform: translateX(-300px);
+    transition: all 1000ms;
+}
+footer .left.active{
+    transform: translateX(0px);
+}
+footer .right{
+    transform: translateX(300px);
+    transition: all 1000ms;
+}
+footer .right.active{
+    transform: translateX(0px);
+}
 footer .left .content{
     display: flex;
     align-items: center;
@@ -1064,10 +1268,10 @@ footer .left .content{
     height: 100%;
     padding-bottom: 70px;
 }
-footer .left .TopText{
+footer .left .toptext{
     position: relative;
 }
-footer .left .TopText h3{
+footer .left .toptext h3{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -1076,7 +1280,7 @@ font-size: 112px;
 line-height: 131px;
  color: #484848;
 }
-footer .left .TopText h4{
+footer .left .toptext h4{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -1090,18 +1294,18 @@ left: 50%;
 transform: translateX(-50%);
 width: 70%;
 }
-footer .left .MainContents{
+footer .left .maincontents{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 50px;
 }
-footer .left .MainContents > div{
+footer .left .maincontents > div{
     width: 50%;
     margin-top: 50px
 }
-footer .left .MainContents > div h5{
+footer .left .maincontents > div h5{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -1111,7 +1315,7 @@ line-height: 23px;
 color: var(--color-2);
 text-align: center;
 }
-footer .left .MainContents > div p{
+footer .left .maincontents > div p{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -1122,7 +1326,7 @@ color: var(--color-2);
 margin-top: 16px;
 text-align: center;
 }
-footer .left .MainContents > div ul{
+footer .left .maincontents > div ul{
     margin: 0;
     padding: 0;
     display: flex;
@@ -1130,10 +1334,10 @@ footer .left .MainContents > div ul{
     justify-content: center;
     margin-top: 15px;
 }
-footer .left .MainContents > div ul li{
+footer .left .maincontents > div ul li{
     margin: 0 5px;
 }
-footer .left .MainContents > div ul li a {
+footer .left .maincontents > div ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1144,7 +1348,7 @@ box-sizing: border-box;
 border-radius: 5.99401px;
 color:var(--color-2);
 }
-footer .right .content .TopImg{
+footer .right .content .topimg{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1154,14 +1358,14 @@ footer .right .content img{
 height: 193.16px;
 margin: 0 auto;
 }
-footer .right .content .Inputs{
+footer .right .content .inputs{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 462.73px;
 }
-footer .right .content .Inputs input{
+footer .right .content .inputs input{
     width: 100%;
     height: 45.99px;    
     border: 0.707541px solid var(--color-2);
@@ -1172,7 +1376,7 @@ margin-top: 18px;
 padding: 12px 22px;
 color: var(--color-2);
 }
-footer .right .content .Inputs textarea{
+footer .right .content .inputs textarea{
     width: 100%;
 
     height: 149.29px;
@@ -1184,11 +1388,11 @@ margin-top: 18px;
 padding: 12px 22px;
 color: var(--color-2);
 }
-footer .right .content .BTN{
+footer .right .content .btn{
     width: 462.73px;
     margin-top: 25px;
 }
-footer .right .content .BTN button{
+footer .right .content .btn button{
     border: none;
     outline: none;
     display: flex;
@@ -1202,7 +1406,7 @@ footer .right .content .BTN button{
     color:var(--color-1);
     transition: all 300ms;
 }
-footer .right .content .BTN button:hover{
+footer .right .content .btn button:hover{
     background: transparent;
     color: var(--color-2);
 }
@@ -1210,34 +1414,34 @@ footer .right .content .BTN button:hover{
 Medias
 ------------*/
 @media (max-width:992px) {
-    #PageRight{
+    #pageright{
         display: none;
     }
-    #PageLeft{
+    #pageleft{
         width: 100%;
     }
-    #Banner{
+    #banner{
         height:auto;
     }
-    #Banner .LeftCol{
+    #banner .leftcol{
         margin-top: 20px;
     }
-    #Banner .RightCol{
+    #banner .rightcol{
         margin-top: 80px;
     }
-    #AboutMe{
+    #aboutme{
         margin-top: 130px;
     }
-    #AboutMe .RightCol{
+    #aboutme .rightcol{
         margin-top: 50px;
     }
-    #Skills .RightCol{
+    #skills .rightcol{
         margin-top: 50px;
     }
-    #PortfolioPoster .MainContentCon .col-12:last-child{
+    #portfolioposter .maincontentcon .col-12:last-child{
         margin-top: 20px;
     }
-    #Testimonials .Slider{
+    #Testimonials .slider{
         width: 80%;
     }
     footer .right .content{
@@ -1248,15 +1452,15 @@ Medias
     }
 }
 @media (max-width:640px) {
-    #Banner .LeftCol h1{
+    #banner .leftcol h1{
         width: 100%;
         margin-top: 20px;
     }
-    #Banner .RightCol .ImageDiv{
+    #banner .rightcol .imagediv{
         width: 100%;
         height: 100%;
     }
-    @keyframes SquareDiv1 {
+    @keyframes squarediv1 {
         0%{
             transform: translateX(0px,0);
         }
@@ -1276,7 +1480,7 @@ Medias
             transform: translate(0px ,0px);
         }
     }
-    @keyframes SquareDiv2 {
+    @keyframes squarediv2 {
         0%{
             transform: translate(0px,0);
         }
@@ -1299,7 +1503,7 @@ Medias
             transform: translate(0px ,0px);
         }
     }
-    @keyframes SquareDiv3 {
+    @keyframes squarediv3 {
         0%{
             transform: translate(0px,0);
         }
@@ -1322,49 +1526,49 @@ Medias
             transform: translate(0px ,0px);
         }
     }    
-    #AboutMe .RightCol .ReadMore div p{
+    #aboutme .rightcol .readmore div p{
         font-size: 25px;
     }
-    #Posters .TopCol .content{
+    #posters .topcol .content{
         flex-wrap: wrap;
     }
-    #Posters .TopCol .content img{
+    #posters .topcol .content img{
         width: 48%;
         margin-top: 20px;
     }
-    #Posters .ImgCol img{
+    #posters .imgcol img{
         width: 48%;
         margin: 0 !important;
     }
-    #Posters .ImgCol .content{
+    #posters .imgcol .content{
         justify-content: space-between;
         padding: 0 10px;
     }
-    #Posters .TextCol h2{
+    #posters .textcol h2{
         font-size: 60px;
     }
-    #Testimonials .Slider{
+    #Testimonials .slider{
         width: 100%;
     }
-    footer .left .TopText h3{
+    footer .left .toptext h3{
         font-size: 90px;
     }
-    footer .left .TopText h4{
+    footer .left .toptext h4{
         width: 90%;
     }
-    footer .right .content .Inputs{
+    footer .right .content .inputs{
         width: 100%;
     }
-    footer .right .content .BTN{
+    footer .right .content .btn{
         width: 100%;
     }
 }
 @media (max-width:400px){
-    #Banner .LeftCol h1{
+    #banner .leftcol h1{
         font-size: 40px;
         line-height:60px;
     }
-    @keyframes SquareDiv1 {
+    @keyframes squarediv1 {
         0%{
             transform: translateX(0px,0);
         }
@@ -1384,7 +1588,7 @@ Medias
             transform: translate(0px ,0px);
         }
     }
-    @keyframes SquareDiv2 {
+    @keyframes squarediv2 {
         0%{
             transform: translate(0px,0);
         }
@@ -1407,7 +1611,7 @@ Medias
             transform: translate(0px ,0px);
         }
     }
-    @keyframes SquareDiv3 {
+    @keyframes squarediv3 {
         0%{
             transform: translate(0px,0);
         }
@@ -1430,27 +1634,27 @@ Medias
             transform: translate(0px ,0px);
         }
     }    
-    #AboutMe .RightCol h2{
+    #aboutme .rightcol h2{
         font-size: 35px;
     }
-    #AboutMe .RightCol h2::before{
+    #aboutme .rightcol h2::before{
         left: 60%;
         
     }
-    #AboutMe .RightCol .ReadMore div p{
+    #aboutme .rightcol .readmore div p{
         font-size: 20px;
     }
-    #Skills .LeftCol h2{
+    #skills .leftcol h2{
         font-size: 80px;
         top: 10px;
     }
-    #PortfolioPoster .MainContentCon .content{
+    #portfolioposter .maincontentcon .content{
         flex-direction: column;
     }
-    #PortfolioPoster .MainContentCon .right{
+    #portfolioposter .maincontentcon .right{
         margin-top: 20px;
     }
-    #Posters .TextCol h2{
+    #posters .textcol h2{
         font-size: 50px;
         line-height: 60px;
     }
