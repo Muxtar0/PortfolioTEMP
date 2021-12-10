@@ -24,6 +24,53 @@
     <!-- Page Left start -->
     <div id="pageleft">
 
+        <!-- Mobile Nav Menu start -->
+        <div class="mobilenavmenu">
+            <div class="content">
+                <div class="logo">
+                    <h2>LEYL</h2>
+                </div>
+    
+                <div class="hamburgermenuiconmobile">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Nav Menu end -->
+
+        <!-- Mobile Open Menu start -->
+        <div class="mobileopenmenu">
+            <div class="content">
+                <div class="navlist">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Me</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="theme">
+                    <div class="themecontent">
+                        <div class="light">
+                            <p class="lighttarget">Light</p>
+                        </div>
+                        <div class="dark">
+                            <p class="darktarget">Dark</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="socialmedias">
+                    <ul>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Open Menu end -->
+
         <!-- Open Menu start -->
         <div class="openmenu">
             <div class="content">
@@ -765,6 +812,14 @@
            });
         window.addEventListener('scroll' , reveal)
         function reveal () {
+
+            if(window.scrollY > 30) {
+                document.querySelector('.mobilenavmenu').classList.add('bgdark')
+            }
+            else {
+                document.querySelector('.mobilenavmenu').classList.remove('bgdark')
+            }
+
             var reveals = document.querySelectorAll('.reveal')
 
             for(let i = 0 ; i < reveals.length ; i++){

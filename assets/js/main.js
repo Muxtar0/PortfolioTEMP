@@ -1,11 +1,26 @@
+/* Mobile Nav */
+const hamburgermenuiconmobile = document.querySelector('.hamburgermenuiconmobile');
+const mobilenavmenu = document.querySelector('.mobilenavmenu');
+const mobileopenmenu = document.querySelector('.mobileopenmenu');
+hamburgermenuiconmobile.addEventListener('click' , (e) => {
+    hamburgermenuiconmobile.classList.toggle('active');
+    mobilenavmenu.classList.toggle('active');
+    mobileopenmenu.classList.toggle('active');
+})
+
+
+
+/* Dekstop Nav */
 const hamburgermenuicon = document.querySelector('.hamburgermenuicon');
 const openmenu = document.querySelector('.openmenu');
-const pageright = document.querySelector('#pageright')
+const pageright = document.querySelector('#pageright');
 hamburgermenuicon.addEventListener('click' , (e) => {
     hamburgermenuicon.classList.toggle('active');
     openmenu.classList.toggle('active');
-    pageright.classList.toggle('active')
+    pageright.classList.toggle('active');
 })
+
+
 
 /* template theme */
 const theme = document.querySelector('.theme');
