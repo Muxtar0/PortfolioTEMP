@@ -69,6 +69,52 @@ Global css
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width:1px;
 }
+.mainbuttonhover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-1);
+    transition: all 100ms;
+
+position: relative;
+width: 98px;
+}
+.mainbuttonhover svg path{
+    fill: var(--color-2);
+}
+.mainbuttonhover .hoversvg path{
+    fill:var(--color-2);
+}
+.mainbuttonhover .hoversvg{
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 100ms;
+}
+.mainbuttonhover p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+}
+.mainbuttonhover:hover p{
+    color:var(--color-2)
+}
+.mainbuttonhover:hover .hoversvg{
+    opacity: 1;
+
+}
+.mainbuttonhover:hover .normalsvg{
+    visibility: hidden;
+    opacity: 0;
+}
 .squarediv{
     border: 1.44872px solid var(--color-2);
     box-sizing: border-box;
@@ -689,36 +735,7 @@ width: 533px;
 }
 
 
-#banner .leftcol a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-1);
-    transition: all 300ms;
 
-position: relative;
-width: 98px;
-}
-#banner .leftcol a svg path{
-    transition: all 300ms;
-    fill: var(--color-2);
-}
-#banner .leftcol a p{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 14px;
-}
-#banner .leftcol a:hover p{
-    color:var(--color-2)
-}
-#banner .leftcol a:hover svg path{
-    fill:var(--colo-1);
-}
 #banner .rightcol .imagediv{
     border: 1.44872px solid var(--color-2);
     box-sizing: border-box;
@@ -920,7 +937,7 @@ color: var(--color-2);
     color: var(--color-2);
     margin: 25px 0;
 }
-#aboutme .rightcol p{
+#aboutme .rightcol > p{
     margin: 0;
     padding: 0;
     font-style: normal;
@@ -942,13 +959,15 @@ color: var(--color-2);
     font-style: italic;
 font-weight: normal;
 font-size: 30px;
-line-height: 37px;
+
 color: var(--color-2);
 }
 #aboutme .rightcol .readmore div{
     display: flex;
 }
-#aboutme .rightcol .readmore div p{
+#aboutme .rightcol .readmore div > p{
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     
@@ -959,31 +978,14 @@ color: var(--color-2);
 
     color: var(--color-2);
 }
-#aboutme .rightcol .readmore div p i{
+#aboutme .rightcol .readmore div > p i{
     margin-left: 20px;
 }
 #aboutme .rightcol .readmore div a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 98px;
-    height: 39px;
-    border-radius: 20px;
-    border: 1px solid var(--color-2);
-    background: var(--color-2);
-    color: var(--color-1);
-    transition: all 300ms;
-    font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 14px;
-margin-left: 20px;
+    margin-left: 20px;
 }
 
-#aboutme .rightcol .readmore div a:hover{
-    background: transparent;
-    color:var(--color-2)
-}
+
 /*------------
 skills
 ------------*/
@@ -1440,27 +1442,9 @@ color: var(--color-2);
 #posters .bottomcol{
     margin-top: 20px;
 }
-#posters .bottomcol a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 98px;
-    height: 39px;
-    border-radius: 20px;
-    border: 1px solid var(--color-2);
-    background: var(--color-2);
-    color: var(--color-1);
-    transition: all 300ms;
-    font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 14px;
-}
 
-#posters .bottomcol a:hover{
-    background: transparent;
-    color:var(--color-2)
-}
+
+
 /*------------
 Testimonials
 ------------*/
