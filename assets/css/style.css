@@ -1138,6 +1138,12 @@ gifportfolio
 #gifportfolio .gifslidercon .swiper-slide{
     background: transparent;
 }
+#gifportfolio .gifslidercon .swiper-slide > a{
+    width: 100%;
+}
+#gifportfolio .gifslidercon .swiper-slide .content{
+    width: 100%;
+}
 #gifportfolio .gifslidercon .swiper-slide .imgdiv{
     border-radius: 20px;
     height: 165px;
