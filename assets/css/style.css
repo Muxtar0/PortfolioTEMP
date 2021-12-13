@@ -2077,4 +2077,9 @@ Medias
         font-size: 50px;
         line-height: 60px;
     }
+    #Testimonials .squarediv4,
+    #Testimonials .squarediv3,
+    #Testimonials .squarediv5{
+        display: none;
+    }
 }
