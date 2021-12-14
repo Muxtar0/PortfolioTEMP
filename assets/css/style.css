@@ -1,3 +1,38 @@
+/*
+Template Name: LEYL
+Version: 1.0
+Author: Muxtar
+Description: Portfolio Template
+
+[TABLE OF CONTENTS]
+01.Reset
+02.Main css
+03.Font icons
+04.Colors
+05.Global css
+06.Swiper
+07.mobilenavmenu
+08.moble open menu
+09.pageright
+10.open menu
+11.banner
+12.aboutme
+13.skills
+14.workstext
+15.gifportfolio
+16.portfolio3d
+17.minimalportfolio
+18.portfolioposter
+19.posters
+20.Testimonials
+21.footer
+22.Medias
+
+*/
+
+
+
+
 /*------------
 Reset
 ------------*/
@@ -14,6 +49,9 @@ body,html{
     overflow-x: hidden;
     width: 100%;
 }
+/*------------
+Main css
+------------*/
 body{
     display: flex;
     background: var(--color-1);
@@ -25,13 +63,64 @@ body{
 }
 #pageright{
     width: 100px;
-    padding-top: 50px;
-    border-left:1px solid var(--pageright-border-color);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    z-index: 1000;
 }
+/*------------
+Font icons
+------------*/
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?8x797h');
+    src:  url('../fonts/icomoon.eot?8x797h#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?8x797h') format('truetype'),
+      url('../fonts/icomoon.woff?8x797h') format('woff'),
+      url('../fonts/icomoon.svg?8x797h#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-Union-Hover:before {
+    content: "\e902";
+    color:var(--color-2);
+    font-size:30px;
+  }
+  .icon-Union-1:before {
+    content: "\e903";
+    font-size:30px;
+
+
+  }
+  .icon-Union:before {
+    content: "\e901";
+    color:var(--color-2);
+    font-size:30px;
+
+  }
+  .icon-Group-2:before {
+    content: "\e900";
+    color: #fff;
+  }
+  
+  
+
+  
+
+  
 /*------------
 Colors
 ------------*/
@@ -79,12 +168,8 @@ Global css
 position: relative;
 width: 98px;
 }
-.mainbuttonhover svg path{
-    fill: var(--color-2);
-}
-.mainbuttonhover .hoversvg path{
-    fill:var(--color-2);
-}
+
+
 .mainbuttonhover .hoversvg{
     opacity: 0;
 
@@ -113,7 +198,7 @@ width: 98px;
     opacity: 1;
 
 }
-.mainbuttonhover:hover .normalsvg{
+.mainbuttonhover:hover .mainsvg{
     visibility: hidden;
     opacity: 0;
 }
@@ -417,12 +502,18 @@ mobileopenmenu .content .socialmedias ul li a:hover{
 pageright
 ------------*/
 #pageright{
+    border-left:1px solid var(--pageright-border-color);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 1000;
     position: fixed;
     top: 0;
     right: 0;
     transition: all 1000ms;
     background: var(--color-1);
     height: 100%;
+    
 }
 #pageright.active{
     right: calc(100% - 100px);
@@ -471,17 +562,19 @@ pageright
     transform: rotate(0);
     margin: 0 10px;
 } */
+#pageright .content{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-direction:column;
+}
 #pageright .content .logo{
-    transform: rotate(90deg);
-}
-#pageright .content .logo h2{
-    font-style: normal;
-font-weight: bold;
-font-size: 30px;
-line-height: 35px;
 
-color: var(--color-2);
+    margin-top:20px;
 }
+
+
 #pageright .content .theme{
 
     display: flex;
@@ -743,6 +836,10 @@ width: 533px;
     border-radius: 21.7308px;
     position: relative;
 }
+#banner .rightcol .imagediv img{
+    border-radius: 21.7308px;
+
+}
 #banner .rightcol .imagediv .squarediv1{
     width: 136.9px;
 height: 131.11px;
@@ -889,6 +986,7 @@ aboutme
 #aboutme .leftcol .imagediv img{
     transform: translateY(1px);
     height: 388.54px;
+    border-radius: 20px;
 }
 
 #aboutme .leftcol .content{
@@ -1125,6 +1223,7 @@ color: var(--color-2);
     font-size: 60px;
     animation: TopDown 700ms infinite;
 }
+
 /*------------
 gifportfolio
 ------------*/
