@@ -166,7 +166,7 @@ Global css
     transition: all 100ms;
 
 position: relative;
-width: 98px;
+width: 80px;
 }
 
 
@@ -188,7 +188,7 @@ width: 98px;
     transform: translate(-50%,-50%);
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 14px;
 }
 .mainbuttonhover:hover p{
@@ -279,6 +279,16 @@ mobilenavmenu
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
+}
+.mobilenavmenu .logo{
+    transform: rotate(-90deg);
+    margin-left:20px;
+    max-width: 150px;
+    max-height: 40px;
+}
+.mobilenavmenu .logo img{
+    width: 100%;
+    height: 100%;
 }
 .mobilenavmenu .logo h2{
     margin: 0;
@@ -572,15 +582,19 @@ pageright
 #pageright .content .logo{
 
     margin-top:20px;
+    max-width: 100px;
+    max-height: 150px;
 }
-
+#pageright .content .logo img{
+    width: 100%;
+    height: 100%;
+}
 
 #pageright .content .theme{
 
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 70px;
 }
 #pageright .content .theme .themecontent{
     display: flex;
@@ -656,7 +670,6 @@ transition: all 300ms;
     width: 57px;
 height: 57px;
 
-margin-top: 50px;
 transform: translateX(5px);
 background: #141414;
 border: 1px solid #434343;
@@ -688,10 +701,7 @@ body.light #pageright .content .hamburgermenuicon{
     transform: rotate(45deg);
     margin: 0;
 }
-#pageright .content .socialmedias{
-    
-    margin-top: 50px;
-}
+
 #pageright .content .socialmedias ul{
     margin: 0;
     padding: 0;
@@ -965,7 +975,7 @@ aboutme
     z-index: 100;
     margin: 1px;
     position: relative;
-    padding: 20px;
+    padding:40px 20px;
     border-radius: 16px;
 
 }
@@ -1185,7 +1195,7 @@ color: var(--color-2);
     top: 0;
     left: 0;
     height: 100%;
-    width: 85%;
+
     border-radius: 13px;
     background: var(--skillpercent-Span-BG);
 }
@@ -1551,12 +1561,12 @@ posters
     justify-content: flex-start;
 }
 #posters .imgcol img{
-    width: 206px;
+    width: 200px;
     height: 306px;
 }
 
 #posters .imgcol img:nth-child(2){
-    margin-left: 25px;
+    margin-left: 30px;
 }
 #posters .textcol .content{
     height: 100%;
@@ -1897,6 +1907,7 @@ color: var(--color-2);
 footer .right .content .btn{
     width: 462.73px;
     margin-top: 25px;
+    padding: 0;
 }
 footer .right .content .btn button{
     border: none;
@@ -1919,6 +1930,11 @@ footer .right .content .btn button:hover{
 /*------------
 Medias
 ------------*/
+@media (min-width: 1200px){
+    #aboutme .container{
+        max-width: 1100px;
+    }
+}
 @media (min-width:992px){
     .mobilenavmenu{
         display: none;

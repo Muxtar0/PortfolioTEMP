@@ -1,5 +1,13 @@
+/* Skill percents */
+const skillpercenttext = document.querySelectorAll('.skillpercenttext');
+const skillpercent = document.querySelectorAll('.skillpercent span');
+for(let i =0 ; i< skillpercenttext.length; i++){
+    skillpercent[i].style.width = skillpercenttext[i].innerHTML;
+}
 /* Theme Control */
 const logo = document.querySelector('#pageright .logo img');
+const mobilelogo = document.querySelector('.mobilenavmenu .logo img')
+
 function ThemeControl(){
     
     if(localStorage.getItem("theme") == "dark"){
@@ -7,6 +15,7 @@ function ThemeControl(){
             body.classList.add('dark');
             bannerbgimg.src = 'assets/images/FrameDark.png';
             logo.src = 'assets/images//LEYL.png';
+            mobilelogo.src = 'assets/images//LEYL.png';
 
     }
     else if(localStorage.getItem("theme") == "light"){
@@ -14,6 +23,7 @@ function ThemeControl(){
             body.classList.add('light');
             bannerbgimg.src = 'assets/images/Frame 1.png';
             logo.src = 'assets/images/LEYL (1).png';
+            mobilelogo.src = 'assets/images/LEYL (1).png';
 
     }
 }
@@ -68,6 +78,8 @@ for(let i = 0 ; i < theme.length ; i++){
             body.classList.add('light');
             bannerbgimg.src = 'assets/images/Frame 1.png';
             logo.src = 'assets/images/LEYL (1).png';
+            mobilelogo.src = 'assets/images/LEYL (1).png';
+
         }    
         if(e.target.classList.contains("darktarget")){
             localStorage.setItem("theme" , "dark");
@@ -76,6 +88,8 @@ for(let i = 0 ; i < theme.length ; i++){
             body.classList.add('dark');
             bannerbgimg.src = 'assets/images/FrameDark.png';
             logo.src = 'assets/images//LEYL.png';
+            mobilelogo.src = 'assets/images//LEYL.png';
+
 
         }
     })
