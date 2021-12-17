@@ -143,6 +143,18 @@ body.dark{
 /*------------
 Global css
 ------------*/
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li{
+    margin: 10px 0px;
+}
+a{
+    text-decoration: none;
+}
+
 .portfoliotoptext h3{
     margin: 0;
     padding: 0;
