@@ -55,6 +55,7 @@ Main css
 body{
     display: flex;
     background: var(--color-1);
+    scroll-behavior: smooth;
     
 }
 #pageleft{
@@ -1561,7 +1562,7 @@ posters
     justify-content: flex-start;
 }
 #posters .imgcol img{
-    width: 200px;
+    width: 37%;
     height: 306px;
 }
 
