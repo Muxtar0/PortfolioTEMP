@@ -14,16 +14,16 @@ function ThemeControl(){
         body.classList.remove('light');
             body.classList.add('dark');
             bannerbgimg.src = 'assets/images/FrameDark.png';
-            logo.src = 'assets/images//LEYL.png';
-            mobilelogo.src = 'assets/images//LEYL.png';
+            logo.src = 'assets/images/Logo.png';
+            mobilelogo.src = 'assets/images/Logo.png';
 
     }
     else if(localStorage.getItem("theme") == "light"){
             body.classList.remove('dark');
             body.classList.add('light');
             bannerbgimg.src = 'assets/images/Frame 1.png';
-            logo.src = 'assets/images/LEYL (1).png';
-            mobilelogo.src = 'assets/images/LEYL (1).png';
+            logo.src = 'assets/images/LogoLight.png';
+            mobilelogo.src = 'assets/images/LogoLight.png';
 
     }
 }
@@ -77,8 +77,8 @@ for(let i = 0 ; i < theme.length ; i++){
             body.classList.remove('dark');
             body.classList.add('light');
             bannerbgimg.src = 'assets/images/Frame 1.png';
-            logo.src = 'assets/images/LEYL (1).png';
-            mobilelogo.src = 'assets/images/LEYL (1).png';
+            logo.src = 'assets/images/LogoLight.png';
+            mobilelogo.src = 'assets/images/LogoLight.png';
 
         }    
         if(e.target.classList.contains("darktarget")){
@@ -87,8 +87,8 @@ for(let i = 0 ; i < theme.length ; i++){
             body.classList.remove('light');
             body.classList.add('dark');
             bannerbgimg.src = 'assets/images/FrameDark.png';
-            logo.src = 'assets/images//LEYL.png';
-            mobilelogo.src = 'assets/images//LEYL.png';
+            logo.src = 'assets/images/Logo.png';
+            mobilelogo.src = 'assets/images/Logo.png';
 
 
         }
