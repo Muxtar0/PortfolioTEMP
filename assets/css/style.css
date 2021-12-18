@@ -893,9 +893,7 @@ width: 533px;
     
     color: var(--color-2);
 }
-#banner .leftcol h2 span{
-    display: none;
-}
+
 #banner .leftcol h3{
     margin: 0;
     padding: 0;

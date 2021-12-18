@@ -94,16 +94,25 @@ for(let i = 0 ; i < theme.length ; i++){
     })
 }
 /* Banner Text Animation */
-const spans = document.querySelectorAll('#banner .leftcol h2 span');
-let index = 0;
-document.addEventListener("DOMContentLoaded", function(event) {
-  setInterval(() => {
-    if(index < spans.length){
-      spans[index].style.display = "inline";
-      index++;
-    }
+$(function() {
+  let gameTimer = function() {
+      setInterval(function () {
+          // Cycle words instead of random.
+          let randomWords = [
+          "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There"
+          ];
+          let randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
+          $("#randomGame").html(randomWord[0]);
+          for(let i = 1; i < randomWord.length; i++) {
+              setTimeout(function() {
+                  let letter = randomWord.charAt(i);
+                  $("#randomGame").append(letter);
+              }, 100 * i);
+          }
+      }, 2500);
+  };
 
-  }, 300);
+  gameTimer();
 
 });
 /* Banner Animation */
