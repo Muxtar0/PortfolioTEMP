@@ -1,7 +1,7 @@
 /*
 Template Name: LEYL
 Version: 1.0
-Author: Muxtar
+Author: theme4you.com
 Description: Portfolio Template
 
 [TABLE OF CONTENTS]
@@ -179,42 +179,65 @@ a{
     transition: all 100ms;
 
 position: relative;
-width: 80px;
+width: 116.61px;
+height: 38.58px;
+border: 0.876761px solid #FFFFFF;
+box-sizing: border-box;
+border-radius: 8.76761px;
+padding: 2px;
+padding-left: 0;
+padding-bottom: 0;
 }
-
-
-.mainbuttonhover .hoversvg{
-    opacity: 0;
-
+.mainbuttonhover::before{
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    transition: all 100ms;
+    top:0;
+    left: 0;
+    width: 0%;
+    height: 0%;
+    background: var(--border-color-linear);
+    z-index: -1;
+    border-radius: 8.76761px;
+    transition: all 900ms;
+}
+.mainbuttonhover:hover{
+    border-color: var(--color-1);
+}
+.mainbuttonhover.width::before{
+    width: 100%;
+}
+.mainbuttonhover.width.height::before{
+    height: 100%;
+}
+.mainbuttonhover.paddingbottom{
+    padding-bottom: 2px;
+}
+.mainbuttonhover.paddingleft{
+    padding-left: 2px;
 }
 .mainbuttonhover p{
-    font-family: 'VT323', monospace;
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
     font-style: normal;
-    font-weight: normal;
-    font-size: 19px;
-    line-height: 14px;
-}
-.mainbuttonhover:hover p{
-    color:var(--color-2)
-}
-.mainbuttonhover:hover .hoversvg{
-    opacity: 1;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color-2);
+    background: var(--color-1);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8.76761px;
 
 }
-.mainbuttonhover:hover .mainsvg{
-    visibility: hidden;
-    opacity: 0;
-}
+
+
+
 .squarediv{
     border: 1.44872px solid var(--color-2);
     box-sizing: border-box;
@@ -842,17 +865,58 @@ banner
     justify-content: center;
 }
 #banner .leftcol h1{
+    margin: 0;
+    padding: 0;
     font-style: normal;
-font-weight: bold;
-font-size: 60px;
-line-height: 70px;
-color: var(--color-2);
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 70px;
+    
+    color: var(--color-2);
 width: 533px;
 
 }
 
+#banner .leftcol h1 span{
+    font-weight: bold;
+}
+#banner .leftcol h2{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 70px;
+    
+    color: var(--color-2);
+}
+#banner .leftcol h3{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 23px;
 
-
+color: var(--color-2);
+border-left: 1px solid #FFFFFF;
+padding-left: 10px;
+margin-bottom: 20px;
+}
+#banner .leftcol h4{
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    
+    color: #959595;
+    margin-top: 11px;
+}
+#banner .leftcol a{
+    margin-top: 25px;
+}
 #banner .rightcol .imagediv{
     border: 1.44872px solid var(--color-2);
     box-sizing: border-box;

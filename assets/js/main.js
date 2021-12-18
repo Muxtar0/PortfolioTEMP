@@ -69,7 +69,6 @@ for(let i = 0 ; i < openmenuli.length; i++){
 const theme = document.querySelectorAll('.theme');
 const body = document.querySelector('#body');
 const bannerbgimg = document.querySelector('#banner .bg-image img')
-const mainbuttonhover = document.querySelectorAll('.mainbuttonhover');
 for(let i = 0 ; i < theme.length ; i++){
     theme[i].addEventListener('click' , (e) => {
         if(e.target.classList.contains("lighttarget")){
@@ -124,6 +123,36 @@ function reveal () {
         }
 
     }
+}
+/* Button animation */
+
+const mainbuttonhover = document.querySelectorAll('.mainbuttonhover');
+
+for(let i = 0 ; i < mainbuttonhover.length; i++){
+  mainbuttonhover[i].addEventListener('mousemove' , () => {
+    mainbuttonhover[i].classList.add('width');
+    setTimeout(() => {
+      mainbuttonhover[i].classList.add("height")
+    },200)
+    setTimeout(() => {
+      mainbuttonhover[i].classList.add("paddingbottom")
+    },700)
+    setTimeout(() => {
+      mainbuttonhover[i].classList.add("paddingleft")
+    },900)
+  })
+  mainbuttonhover[i].addEventListener('mouseout' , () => {
+    mainbuttonhover[i].classList.remove('width');
+    setTimeout(() => {
+      mainbuttonhover[i].classList.remove("height")
+    },200)
+    setTimeout(() => {
+      mainbuttonhover[i].classList.remove("paddingbottom")
+    },700)
+    setTimeout(() => {
+      mainbuttonhover[i].classList.remove("paddingleft")
+    },900)
+  })
 }
 
 /* Swiper */
