@@ -1,3 +1,28 @@
+/* Banner Text Animation */
+let time = 700;
+let change = "true"
+$(function() {
+  let gameTimer = function() {
+      setTimeout(function () {
+          // Cycle words instead of random.
+          let randomWords = [
+          "Hey There","Hey There"
+          ];
+          let randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
+          $("#randomGame").html(randomWord[0]);
+          for(let i = 1; i < randomWord.length; i++) {
+              setTimeout(function() {
+                  let letter = randomWord.charAt(i);
+                  $("#randomGame").append(letter);
+              }, 100 * i);
+          }
+      }, time);
+
+  };
+
+  gameTimer();
+
+});
 /* Skill percents */
 const skillpercenttext = document.querySelectorAll('.skillpercenttext');
 const skillpercent = document.querySelectorAll('.skillpercent span');
@@ -93,28 +118,7 @@ for(let i = 0 ; i < theme.length ; i++){
         }
     })
 }
-/* Banner Text Animation */
-$(function() {
-  let gameTimer = function() {
-      setInterval(function () {
-          // Cycle words instead of random.
-          let randomWords = [
-          "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There", "Hey There"
-          ];
-          let randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
-          $("#randomGame").html(randomWord[0]);
-          for(let i = 1; i < randomWord.length; i++) {
-              setTimeout(function() {
-                  let letter = randomWord.charAt(i);
-                  $("#randomGame").append(letter);
-              }, 100 * i);
-          }
-      }, 2500);
-  };
 
-  gameTimer();
-
-});
 /* Banner Animation */
 const bannerleftcol = document.querySelector("#banner .leftcol")
 const bannerrightcol = document.querySelector("#banner .rightcol")
