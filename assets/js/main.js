@@ -93,6 +93,19 @@ for(let i = 0 ; i < theme.length ; i++){
         }
     })
 }
+/* Banner Text Animation */
+const spans = document.querySelectorAll('#banner .leftcol h2 span');
+let index = 0;
+document.addEventListener("DOMContentLoaded", function(event) {
+  setInterval(() => {
+    if(index < spans.length){
+      spans[index].style.display = "inline";
+      index++;
+    }
+
+  }, 300);
+
+});
 /* Banner Animation */
 const bannerleftcol = document.querySelector("#banner .leftcol")
 const bannerrightcol = document.querySelector("#banner .rightcol")
