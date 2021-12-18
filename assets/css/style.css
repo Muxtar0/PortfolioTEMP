@@ -98,18 +98,18 @@ Font icons
   .icon-Union-Hover:before {
     content: "\e902";
     color:var(--color-2);
-    font-size:30px;
+    font-size:35px;
   }
   .icon-Union-1:before {
     content: "\e903";
-    font-size:30px;
+    font-size:35px;
 
 
   }
   .icon-Union:before {
     content: "\e901";
     color:var(--color-2);
-    font-size:30px;
+    font-size:35px;
 
   }
   .icon-Group-2:before {
@@ -201,7 +201,7 @@ width: 80px;
     transform: translate(-50%,-50%);
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 14px;
 }
 .mainbuttonhover:hover p{
@@ -970,7 +970,7 @@ aboutme
 #aboutme .container{
 
     position: relative;
-    padding: 1px;
+    padding: 3px;
 }
 #aboutme .container::before{
     content: "";
@@ -1367,7 +1367,7 @@ minimalportfolio
 }
 #minimalportfolio .minimalslidercon .swiper-slide a{
     position: relative;
-    padding: 1px;
+    padding: 3px;
     height: 250px;
     width: 100%;
 }
@@ -1449,7 +1449,7 @@ portfolioposter
 #portfolioposter .maincontentcon .col-lg-6 .content{
     border-radius: 13.3168px;
     position: relative;
-    padding: 1px;
+    padding: 3px;
 }
 #portfolioposter .maincontentcon .col-lg-6 .content .content2{
     background: var(--color-1);
@@ -1951,6 +1951,19 @@ Medias
 @media (min-width:992px){
     .mobilenavmenu{
         display: none;
+    }
+}
+@media (max-width:1200px){
+    #posters .topcol .content{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #posters .topcol .content img{
+        width: 220px;
+        margin-top: 30px;
+    }
+    #posters .imgcol img{
+        width: 220px;
     }
 }
 @media (max-width:992px) {
