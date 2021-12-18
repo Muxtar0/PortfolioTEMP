@@ -873,7 +873,7 @@ height: 131.11px;
 }
 @keyframes squarediv1 {
     0%{
-        transform: translateX(0px,0);
+        transform: translate(0px,0px);
     }
 
     30%{
@@ -2016,7 +2016,7 @@ Medias
     }
     @keyframes squarediv1 {
         0%{
-            transform: translateX(0px,0);
+            transform: translate(0px,0px);
         }
     
         30%{
@@ -2131,7 +2131,7 @@ Medias
     }
     @keyframes squarediv1 {
         0%{
-            transform: translateX(0px,0);
+            transform: translate(0px,0);
         }
     
         30%{
