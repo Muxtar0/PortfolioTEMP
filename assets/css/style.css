@@ -95,26 +95,10 @@ Font icons
     -moz-osx-font-smoothing: grayscale;
   }
   
-  .icon-Union-Hover:before {
-    content: "\e902";
-    color:var(--color-2);
-    font-size:35px;
-  }
-  .icon-Union-1:before {
-    content: "\e903";
-    font-size:35px;
 
-
-  }
-  .icon-Union:before {
-    content: "\e901";
-    color:var(--color-2);
-    font-size:35px;
-
-  }
   .icon-Group-2:before {
     content: "\e900";
-    color: #fff;
+    color: var(--color-2);
   }
   
   .icon-Logomark-Transparent-White-1:before {
