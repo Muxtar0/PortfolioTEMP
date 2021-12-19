@@ -896,7 +896,7 @@ top: -293px;
 
 background: radial-gradient(50% 50% at 50% 50%, rgba(51, 1, 194, 0.35) 0%, rgba(73, 1, 165, 0) 100%);
 opacity: 0.7;
-animation: 10000ms bgcolor1 infinite ;
+animation: 20000ms bgcolor1 infinite ;
 }
 @keyframes bgcolor1 {
     0%{
@@ -929,7 +929,7 @@ animation: 10000ms bgcolor1 infinite ;
     
     background: radial-gradient(50% 50% at 50% 50%, rgba(63, 1, 194, 0.35) 0%, rgba(73, 1, 165, 0) 100%);
     opacity: 0.7;
-    animation: 10000ms bgcolor2 infinite ;
+    animation: 20000ms bgcolor2 infinite ;
 }
 @keyframes bgcolor2 {
     0%{
