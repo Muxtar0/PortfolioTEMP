@@ -1,11 +1,29 @@
 /* Banner Text Animation */
 const  TextAnimation = document.querySelector('.TextAnimation');
+const  TextAnimationSpans = document.querySelectorAll('.TextAnimation span');
+let index = 0;
+
 
 document.addEventListener("DOMContentLoaded", function(event) {
+
   setTimeout(() => {
-    TextAnimation.classList.add('active');
-  }, 200)
+    TextAnimation.classList.add('active')
+  }, 200);
+  setTimeout(() => {
+      TextAnimation.classList.remove('active')
+  }, 900);
+  setTimeout(() => {
+    TextAnimationSpans[0].style.visibility = "hidden";
+  }, 1650);
+  setTimeout(() => {
+    TextAnimationSpans[1].style.visibility = "visible";
+  }, 1700);
+  setTimeout(() => {
+    TextAnimation.classList.add('active')
+  },2300);
+
 });
+
 
 /* Skill percents */
 const skillpercenttext = document.querySelectorAll('.skillpercenttext');
