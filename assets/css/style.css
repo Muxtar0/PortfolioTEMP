@@ -240,7 +240,77 @@ padding: 1px;
 }
 
 
+ .socialmedias ul li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+height: 42px;
+font-size: 20px;
 
+
+box-sizing: border-box;
+border-radius: 10px;
+color: var(--color-2);
+transition: all 600ms;
+position: relative;
+padding: 1px;
+}
+ .socialmedias ul li a i{
+    width: 100%;
+    height: 100%;
+    background: var(--color-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+border-radius: 8px;
+
+}
+ .socialmedias ul li a:hover{
+    color: #C50BD2;
+}
+ .socialmedias ul li a::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0%;
+    height: 0%;
+    background: var(--border-color-linear);
+    z-index: -1;
+    border-radius: 8.76761px;
+    transition: all 900ms;
+    visibility: hidden;
+    opacity: 0;
+}
+ .socialmedias ul li a::after{
+    content: "";
+    position: absolute;
+    bottom:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-2);
+    z-index: -1;
+    border-radius: 8.76761px;
+    transition: all 900ms;
+
+}
+
+ .socialmedias ul li a.width::before{
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+}
+ .socialmedias ul li a.width::after{
+    width: 0;
+}
+ .socialmedias ul li a.width.height::before{
+    height: 100%;
+}
+ .socialmedias ul li a.width.height::after{
+    height: 0;
+}
 .squarediv{
     border: 1.44872px solid var(--color-2);
     box-sizing: border-box;
@@ -529,24 +599,7 @@ position: relative;
     
     margin: 0px 10px;
 }
-.mobileopenmenu .content .socialmedias ul li a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-height: 42px;
-font-size: 20px;
 
-border: 1px solid #434343;
-box-sizing: border-box;
-border-radius: 10px;
-color: var(--color-2);
-transition: all 300ms;
-}
-mobileopenmenu .content .socialmedias ul li a:hover{
-    background: var(--color-2);
-    color: var(--color-1);
-}
 /*------------
 pageright
 ------------*/
@@ -750,24 +803,8 @@ body.light #pageright .content .hamburgermenuicon{
     transform: rotate(90deg);
     margin: 10px 0;
 }
-#pageright .content .socialmedias ul li a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-height: 42px;
-font-size: 20px;
 
-border: 1px solid #434343;
-box-sizing: border-box;
-border-radius: 10px;
-color: var(--color-2);
-transition: all 300ms;
-}
-#pageright .content .socialmedias ul li a:hover{
-    background: var(--color-2);
-    color: var(--color-1);
-}
+
 /*------------
 open menu
 ------------*/
@@ -850,17 +887,71 @@ banner
 #banner .rightcol.active{
     transform: translateX(0);
 }
-#banner .bg-image{
+#banner .bgcolor1{
     position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    width: 100%;
-    z-index: -1;
+    width: 859px;
+height: 859px;
+left: -225px;
+top: -293px;
+
+background: radial-gradient(50% 50% at 50% 50%, rgba(51, 1, 194, 0.35) 0%, rgba(73, 1, 165, 0) 100%);
+opacity: 0.7;
+animation: 7000ms bgcolor1 infinite ;
 }
-#banner .bg-image img{
-    width: 100%;
-    height: 100%;
+@keyframes bgcolor1 {
+    0%{
+        left: -225px;
+        top: -293px;
+    }
+    25%{
+        left: 40%;
+        top: -293px;
+    }
+    50%{
+        left: 40%;
+        top: 20%;
+    }
+    75%{
+        left: -225px;
+        top: 20%;
+    }
+    100%{
+        left: -225px;
+        top: -293px;
+    }
+}
+#banner .bgcolor2{
+    position: absolute;
+    width: 884px;
+    height: 884px;
+    bottom: -300px;
+    right: 0;
+    
+    background: radial-gradient(50% 50% at 50% 50%, rgba(63, 1, 194, 0.35) 0%, rgba(73, 1, 165, 0) 100%);
+    opacity: 0.7;
+    animation: 7000ms bgcolor2 infinite ;
+}
+@keyframes bgcolor2 {
+    0%{
+        bottom: -200px;
+        right: 0;
+    }
+    25%{
+        right: 40%;
+        bottom: -200px;
+    }
+    50%{
+        right: 40%;
+        bottom: 20%;
+    }
+    75%{
+        right: 0px;
+        bottom: 20%;
+    }
+    100%{
+        right: 0px;
+        bottom: -200px;
+    }
 }
 #banner .col-12{
     display: flex;
@@ -890,10 +981,26 @@ width: 533px;
     font-weight: 300;
     font-size: 60px;
     line-height: 70px;
-    
+    width: 280px;
     color: var(--color-2);
-}
+    position: relative;
+    transition: all 600ms;
 
+}
+#banner .leftcol h2::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--color-1);
+    border-left: 1px solid var(--color-2);
+    transition: all 1000ms;
+}
+#banner .leftcol h2.active::after{
+    width: 1px;
+}
 #banner .leftcol h3{
     margin: 0;
     padding: 0;
@@ -1960,22 +2067,13 @@ footer .left .maincontents > div ul li{
     margin: 0 5px;
 }
 footer .left .maincontents > div ul li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
     width: 30.57px;
 height: 30.57px;
-border: 0.599401px solid var(--color-2);
-box-sizing: border-box;
-border-radius: 5.99401px;
-color:var(--color-2);
-transition: all 300ms;
-font-size: 18px;
+font-size: 15px;
+
 }
-footer .left .maincontents > div ul li a:hover{
-    background: var(--color-2);
-    color: var(--color-1);
-}
+
 footer .right .content .topimg{
     display: flex;
     align-items: center;
@@ -2073,10 +2171,12 @@ Medias
         padding-top: 70px;
     }
     #banner .leftcol{
-        margin-top: 20px;
+        margin-top: 90px;
+        order: 2;
     }
     #banner .rightcol{
-        margin-top: 80px;
+        margin-top: 30px;
+        order: 1;
     }
     #aboutme{
         margin-top: 130px;

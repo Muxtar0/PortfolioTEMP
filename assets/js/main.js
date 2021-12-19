@@ -1,28 +1,12 @@
 /* Banner Text Animation */
-let time = 700;
-let change = "true"
-$(function() {
-  let gameTimer = function() {
-      setTimeout(function () {
-          // Cycle words instead of random.
-          let randomWords = [
-          "Hey There","Hey There"
-          ];
-          let randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
-          $("#randomGame").html(randomWord[0]);
-          for(let i = 1; i < randomWord.length; i++) {
-              setTimeout(function() {
-                  let letter = randomWord.charAt(i);
-                  $("#randomGame").append(letter);
-              }, 100 * i);
-          }
-      }, time);
+const  TextAnimation = document.querySelector('.TextAnimation');
 
-  };
-
-  gameTimer();
-
+document.addEventListener("DOMContentLoaded", function(event) {
+  setTimeout(() => {
+    TextAnimation.classList.add('active');
+  }, 200)
 });
+
 /* Skill percents */
 const skillpercenttext = document.querySelectorAll('.skillpercenttext');
 const skillpercent = document.querySelectorAll('.skillpercent span');
@@ -38,7 +22,6 @@ function ThemeControl(){
     if(localStorage.getItem("theme") == "dark"){
         body.classList.remove('light');
             body.classList.add('dark');
-            bannerbgimg.src = 'assets/images/FrameDark.png';
             logo.src = 'assets/images/Logo.png';
             mobilelogo.src = 'assets/images/Logo.png';
 
@@ -46,7 +29,6 @@ function ThemeControl(){
     else if(localStorage.getItem("theme") == "light"){
             body.classList.remove('dark');
             body.classList.add('light');
-            bannerbgimg.src = 'assets/images/Frame 1.png';
             logo.src = 'assets/images/LogoLight.png';
             mobilelogo.src = 'assets/images/LogoLight.png';
 
@@ -93,14 +75,12 @@ for(let i = 0 ; i < openmenuli.length; i++){
 /* template theme */
 const theme = document.querySelectorAll('.theme');
 const body = document.querySelector('#body');
-const bannerbgimg = document.querySelector('#banner .bg-image img')
 for(let i = 0 ; i < theme.length ; i++){
     theme[i].addEventListener('click' , (e) => {
         if(e.target.classList.contains("lighttarget")){
             localStorage.setItem("theme" , "light");
             body.classList.remove('dark');
             body.classList.add('light');
-            bannerbgimg.src = 'assets/images/Frame 1.png';
             logo.src = 'assets/images/LogoLight.png';
             mobilelogo.src = 'assets/images/LogoLight.png';
 
@@ -110,7 +90,6 @@ for(let i = 0 ; i < theme.length ; i++){
 
             body.classList.remove('light');
             body.classList.add('dark');
-            bannerbgimg.src = 'assets/images/FrameDark.png';
             logo.src = 'assets/images/Logo.png';
             mobilelogo.src = 'assets/images/Logo.png';
 
@@ -153,34 +132,39 @@ function reveal () {
 /* Button animation */
 
 const mainbuttonhover = document.querySelectorAll('.mainbuttonhover');
-
+const socialmedias = document.querySelectorAll('.socialmedias ul li a')
 for(let i = 0 ; i < mainbuttonhover.length; i++){
   mainbuttonhover[i].addEventListener('mousemove' , () => {
     mainbuttonhover[i].classList.add('width');
     setTimeout(() => {
       mainbuttonhover[i].classList.add("height")
     },200)
-    setTimeout(() => {
-      mainbuttonhover[i].classList.add("paddingbottom")
-    },700)
-    setTimeout(() => {
-      mainbuttonhover[i].classList.add("paddingleft")
-    },900)
+
   })
   mainbuttonhover[i].addEventListener('mouseout' , () => {
     mainbuttonhover[i].classList.remove('width');
     setTimeout(() => {
       mainbuttonhover[i].classList.remove("height")
     },200)
-    setTimeout(() => {
-      mainbuttonhover[i].classList.remove("paddingbottom")
-    },700)
-    setTimeout(() => {
-      mainbuttonhover[i].classList.remove("paddingleft")
-    },900)
+
   })
 }
+for(let i = 0 ; i < socialmedias.length; i++){
+  socialmedias[i].addEventListener('mousemove' , () => {
+    socialmedias[i].classList.add('width');
+    setTimeout(() => {
+      socialmedias[i].classList.add("height")
+    },200)
 
+  })
+  socialmedias[i].addEventListener('mouseout' , () => {
+    socialmedias[i].classList.remove('width');
+    setTimeout(() => {
+      socialmedias[i].classList.remove("height")
+    },200)
+
+  })
+}
 /* Swiper */
 var swiper = new Swiper(".gifslider", {
     slidesPerView: 1,
