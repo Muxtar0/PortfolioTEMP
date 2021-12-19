@@ -4,42 +4,7 @@ const  TextAnimationSpans = document.querySelectorAll('.TextAnimation span');
 let index = 0;
 
 
-// document.addEventListener("DOMContentLoaded", function(event) {
 
-//   setInterval(() => {
-//     TextAnimation.classList.toggle('active')
-    
-//   }, 1300);
-//   setInterval(() => {
-//       TextAnimationSpans[0].classList.remove('active')
-//       TextAnimationSpans[1].classList.remove('active')
-//       TextAnimationSpans[index].classList.add('active')
-//       if(index == 0){
-//         index =1;
-//       }
-//       else if (index ==1){
-//         index=0;
-//       }
-//   }, 20000);
-
-//   // setTimeout(() => {
-//   //   TextAnimation.classList.add('active')
-//   // }, 200);
-//   // setTimeout(() => {
-//   //     TextAnimation.classList.remove('active')
-//   // }, 900);
-//   // setTimeout(() => {
-//   //   TextAnimationSpans[0].style.visibility = "hidden";
-//   // }, 1650);
-//   // setTimeout(() => {
-//   //   TextAnimationSpans[1].style.visibility = "visible";
-//   // }, 1700);
-//   // setTimeout(() => {
-//   //   TextAnimation.classList.add('active')
-    
-//   // },2300);
-
-// });
 
 
 /* Skill percents */
