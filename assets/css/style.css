@@ -974,42 +974,53 @@ width: 533px;
 #banner .leftcol h1 span{
     font-weight: bold;
 }
-#banner .leftcol h2{
+#banner .leftcol .dynamic-text{
+    height: 70px;
+    line-height: 70px;
+    overflow: hidden;
+
+
+}
+
+#banner .leftcol .dynamic-text li {
     margin: 0;
     padding: 0;
     font-style: normal;
     font-weight: 300;
     font-size: 60px;
     line-height: 70px;
-    display: inline-block;
     color: var(--color-2);
     position: relative;
-    transition: all 600ms;
-
+    top: 0;
+    animation:  slide 3000ms steps(2) infinite;
 }
-#banner .leftcol h2 span:nth-child(1){
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+@keyframes slide {
+    100%{
+        top: -150px;
+    }
 }
-#banner .leftcol h2 span:nth-child(2){
-    visibility: hidden;
+#banner .leftcol .dynamic-text li span{
+    position: relative;
 }
-#banner .leftcol h2::after{
+#banner .leftcol .dynamic-text li span::after{
     content: "";
     position: absolute;
-    top: 0;
-    right: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     background: var(--color-1);
     border-left: 1px solid var(--color-2);
-    transition: all 1000ms;
+    animation:  typing 1500ms steps(20) infinite;
 }
-#banner .leftcol h2.active::after{
-    width: 1px;
+
+@keyframes typing {
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
 }
+
+
 #banner .leftcol h3{
     margin: 0;
     padding: 0;
@@ -2319,7 +2330,6 @@ Medias
     }
     #posters .imgcol .content{
         justify-content: space-between;
-        padding: 0 10px;
     }
     #posters .textcol h2{
         font-size: 60px;
